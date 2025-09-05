@@ -1,18 +1,23 @@
 name: Auto-Update Courses and Certs
+
 on:
   schedule:
+    # Run daily at midnight UTC
     - cron: '0 0 * * *'
   workflow_dispatch:
+    # Allow manual triggering from the Actions tab
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
       - name: Fetch and update courses data
         run: |
+          # Fetch the latest free computer‑science courses and append an affiliate ID
           curl -s "https://api.rss2json.com/v1/api.json?rss_url=https://www.coursera.org/browse/computer-science/free" \
-            | jq -r '.items | map({title: .title, link: (.link + "?aff=your_aff_id")}) | .[0:5]' \
-            > courses.json
+            | jq '.items | map({title: .title, link: (.link + "?aff=your_aff_id")}) | .[0:5]' > courses.json
       - name: Commit changes
         run: |
           git config --global user.name 'GitHub Actions'
