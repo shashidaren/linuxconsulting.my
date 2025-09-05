@@ -5,80 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Linux‑Compatible Hardware &amp; GPUs for LLMs</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <header>
     <h1>Recommended Hardware for Linux</h1>
     <p>Including GPUs for running LLMs. Check use‑cases and affiliate links.</p>
   </header>
+
   <nav>
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="hardware.html">Hardware</a>
-    <a href="blog.html">Blog</a>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="courses.html"><i class="fas fa-graduation-cap"></i> Courses</a>
+    <a href="hardware.html"><i class="fas fa-laptop"></i> Hardware</a>
+    <a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a>
   </nav>
+
   <section>
-    <h2>Linux‑Compatible Hardware</h2>
-    <div id="hardware-list"></div>
+    <div class="card">
+      <h2><i class="fas fa-laptop"></i> Linux‑Compatible Hardware</h2>
+      <p>These recommendations are automatically updated daily. All links are affiliate links that support our site.</p>
+      <div id="hardware-list"></div>
+    </div>
 
-    <h2>Check Your Use Case</h2>
-    <form id="use-case-form">
-      <label for="user-input">What do you need? (e.g., Laptop for coding, server for home)</label><br />
-      <input type="text" id="user-input" placeholder="Enter your use case" />
-      <button type="submit">Check recommendations</button>
-    </form>
-    <div id="recommendations"></div>
+    <div class="card">
+      <h2><i class="fas fa-search"></i> Check Your Use Case</h2>
+      <p>Tell us what you need, and we'll provide personalized hardware recommendations.</p>
+      <form id="use-case-form">
+        <label for="user-input">What do you need? (e.g., Laptop for coding, server for home)</label>
+        <input type="text" id="user-input" placeholder="Enter your use case" />
+        <button type="submit"><i class="fas fa-check"></i> Check recommendations</button>
+      </form>
+      <div id="recommendations"></div>
+    </div>
 
-    <h2>Best GPUs for LLMs on Linux (2025)</h2>
-    <div id="llm-gpus"></div>
+    <div class="card">
+      <h2><i class="fas fa-microchip"></i> Best GPUs for LLMs on Linux (2025)</h2>
+      <p>Specialized GPUs for running Large Language Models on Linux systems.</p>
+      <div id="llm-gpus"></div>
+    </div>
 
-    <h2>Check Your LLM Use Case</h2>
-    <form id="llm-form">
-      <label for="llm-input">What LLM size/use? (e.g., 70B model for chat, image generation)</label><br />
-      <input type="text" id="llm-input" placeholder="Enter your needs" />
-      <button type="submit">Get recommendations</button>
-    </form>
-    <div id="llm-recs"></div>
+    <div class="card">
+      <h2><i class="fas fa-robot"></i> Check Your LLM Use Case</h2>
+      <p>Tell us about your LLM needs, and we'll suggest the best GPU setup.</p>
+      <form id="llm-form">
+        <label for="llm-input">What LLM size/use? (e.g., 70B model for chat, image generation)</label>
+        <input type="text" id="llm-input" placeholder="Enter your needs" />
+        <button type="submit"><i class="fas fa-check"></i> Get recommendations</button>
+      </form>
+      <div id="llm-recs"></div>
+    </div>
   </section>
+
   <footer>
-    <p>&copy; 2025 Linux Consulting MY.</p>
+    <p>&copy; 2025 Linux Consulting MY.</p>
   </footer>
+
   <script src="scripts.js"></script>
   <script>
     // Populate the lists from JSON data
     fetchHardware();
     fetchLLMGpus();
-    // Form listener for general hardware use cases
-    document.getElementById('use-case-form').addEventListener('submit', function (e) {
+
+    // Handle use case form submission
+    document.getElementById('use-case-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      const input = document.getElementById('user-input').value.toLowerCase();
-      const recs = document.getElementById('recommendations');
-      recs.innerHTML = '';
-      let suggestion = '';
-      if (input.includes('laptop') || input.includes('coding')) {
-        suggestion = 'System76 Lemur Pro: <a href="https://system76.com/laptops/lemur?aff=your_id">Buy now</a>';
-      } else if (input.includes('server') || input.includes('home')) {
-        suggestion = 'Raspberry Pi 5: <a href="https://amazon.com/raspberry-pi-5?tag=your_amazon_id">Purchase</a>';
+      const userInput = document.getElementById('user-input').value;
+      const recommendations = document.getElementById('recommendations');
+
+      if (userInput.toLowerCase().includes('laptop') || userInput.toLowerCase().includes('coding')) {
+        recommendations.innerHTML = '<p><strong>Recommended:</strong> Dell XPS 13 Developer Edition or ThinkPad X1 Carbon with Linux pre-installed.</p>';
+      } else if (userInput.toLowerCase().includes('server') || userInput.toLowerCase().includes('home')) {
+        recommendations.innerHTML = '<p><strong>Recommended:</strong> Consider a small form factor PC like Intel NUC or build a custom server with ECC memory.</p>';
       } else {
-        suggestion = 'Browse the list above.';
+        recommendations.innerHTML = '<p>Please provide more details about your use case for a personalized recommendation.</p>';
       }
-      recs.innerHTML = `<p>${suggestion}</p>`;
     });
-    // Form listener for specific LLM GPU recommendations
-    document.getElementById('llm-form').addEventListener('submit', function (e) {
+
+    // Handle LLM form submission
+    document.getElementById('llm-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      const input = document.getElementById('llm-input').value.toLowerCase();
-      const recs = document.getElementById('llm-recs');
-      recs.innerHTML = '';
-      let suggestion = '';
-      if (input.includes('70b') || input.includes('large model')) {
-        suggestion = 'NVIDIA RTX 4090: <a href="https://amazon.com/rtx-4090?tag=your_id">Buy now</a>';
-      } else if (input.includes('image') || input.includes('gen')) {
-        suggestion = 'NVIDIA H100: <a href="https://nvidia.com/h100?aff=your_id">Purchase</a>';
+      const llmInput = document.getElementById('llm-input').value;
+      const llmRecs = document.getElementById('llm-recs');
+
+      if (llmInput.toLowerCase().includes('70b') || llmInput.toLowerCase().includes('large')) {
+        llmRecs.innerHTML = '<p><strong>Recommended:</strong> NVIDIA RTX 4090 with at least 24GB VRAM or consider multiple RTX 3090 cards.</p>';
+      } else if (llmInput.toLowerCase().includes('image') || llmInput.toLowerCase().includes('generation')) {
+        llmRecs.innerHTML = '<p><strong>Recommended:</strong> NVIDIA RTX 4070 or better for stable diffusion and other image generation models.</p>';
       } else {
-        suggestion = 'Try RTX 4060 Ti.';
+        llmRecs.innerHTML = '<p>For smaller models (7B-13B), an RTX 3060 with 12GB VRAM should be sufficient. For more specific recommendations, please provide details about model size and use case.</p>';
       }
-      recs.innerHTML = `<p>${suggestion}</p>`;
     });
   </script>
 </body>

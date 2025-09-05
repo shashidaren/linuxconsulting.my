@@ -16,14 +16,17 @@ async function fetchCourses() {
     if (Array.isArray(data) && list) {
       data.forEach(item => {
         const div = document.createElement('div');
-        div.innerHTML = `<p><a href="${item.link}">${item.title}</a> (Free Course – Affiliate)</p>`;
+        div.innerHTML = `
+          <h3>${item.title}</h3>
+          <p><a href="${item.link}"><i class="fas fa-external-link-alt"></i> View Course</a> (Free Course – Affiliate)</p>
+        `;
         list.appendChild(div);
       });
     }
   } catch (err) {
     // Show a fallback message if the JSON couldn't be loaded
     if (list) {
-      list.innerHTML = '<p>No course data available at the moment.</p>';
+      list.innerHTML = '<div class="error-message"><p><i class="fas fa-exclamation-circle"></i> No course data available at the moment.</p></div>';
     }
     console.error('Failed to fetch courses:', err);
   }
@@ -40,13 +43,16 @@ async function fetchHardware() {
     if (Array.isArray(data) && list) {
       data.forEach(item => {
         const div = document.createElement('div');
-        div.innerHTML = `<p><a href="${item.link}">${item.title}</a> – Linux Certified (Affiliate)</p>`;
+        div.innerHTML = `
+          <h3>${item.title}</h3>
+          <p><a href="${item.link}"><i class="fas fa-external-link-alt"></i> View Details</a> – Linux Certified (Affiliate)</p>
+        `;
         list.appendChild(div);
       });
     }
   } catch (err) {
     if (list) {
-      list.innerHTML = '<p>No hardware data available at the moment.</p>';
+      list.innerHTML = '<div class="error-message"><p><i class="fas fa-exclamation-circle"></i> No hardware data available at the moment.</p></div>';
     }
     console.error('Failed to fetch hardware:', err);
   }
@@ -63,13 +69,16 @@ async function fetchLLMGpus() {
     if (Array.isArray(data) && list) {
       data.forEach(item => {
         const div = document.createElement('div');
-        div.innerHTML = `<p><a href="${item.link}">${item.title}</a> – For LLMs on Linux (Affiliate)</p>`;
+        div.innerHTML = `
+          <h3>${item.title}</h3>
+          <p><a href="${item.link}"><i class="fas fa-external-link-alt"></i> View Details</a> – For LLMs on Linux (Affiliate)</p>
+        `;
         list.appendChild(div);
       });
     }
   } catch (err) {
     if (list) {
-      list.innerHTML = '<p>No GPU recommendations available at the moment.</p>';
+      list.innerHTML = '<div class="error-message"><p><i class="fas fa-exclamation-circle"></i> No GPU recommendations available at the moment.</p></div>';
     }
     console.error('Failed to fetch LLM GPUs:', err);
   }
