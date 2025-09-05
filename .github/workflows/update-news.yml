@@ -31,3 +31,4 @@ jobs:
           git add *.json
           git commit -m "Auto-update news feeds" || echo "No changes"
           git push
+
