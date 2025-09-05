@@ -3,76 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linux-Compatible Hardware & GPUs for LLMs</title>
+  <title>Linux‑Compatible Hardware &amp; GPUs for LLMs</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <h1>Recommended Hardware for Linux</h1>
-    <p>Including GPUs for running LLMs. Check use cases and affiliates.</p>
+    <p>Including GPUs for running LLMs. Check use‑cases and affiliate links.</p>
   </header>
-  
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="hardware.html">Hardware</a>
+    <a href="blog.html">Blog</a>
+  </nav>
   <section>
-    <h2>Linux-Compatible Hardware</h2>
+    <h2>Linux‑Compatible Hardware</h2>
     <div id="hardware-list"></div>
-    
+
     <h2>Check Your Use Case</h2>
     <form id="use-case-form">
-      <label>What do you need? (e.g., Laptop for coding, Server for home)</label><br>
-      <input type="text" id="user-input" placeholder="Enter your use case">
-      <button type="submit">Check Recommendations</button>
+      <label for="user-input">What do you need? (e.g., Laptop for coding, server for home)</label><br />
+      <input type="text" id="user-input" placeholder="Enter your use case" />
+      <button type="submit">Check recommendations</button>
     </form>
     <div id="recommendations"></div>
-    
+
     <h2>Best GPUs for LLMs on Linux (2025)</h2>
     <div id="llm-gpus"></div>
-    
+
     <h2>Check Your LLM Use Case</h2>
     <form id="llm-form">
-      <label>What LLM size/use? (e.g., 70B model for chat, Image gen)</label><br>
-      <input type="text" id="llm-input" placeholder="Enter your needs">
-      <button type="submit">Get Recommendations</button>
+      <label for="llm-input">What LLM size/use? (e.g., 70B model for chat, image generation)</label><br />
+      <input type="text" id="llm-input" placeholder="Enter your needs" />
+      <button type="submit">Get recommendations</button>
     </form>
     <div id="llm-recs"></div>
   </section>
-  
   <footer>
-    <p>&copy; 2025 Linux Consulting MY.</p>
+    <p>&copy; 2025 Linux Consulting MY.</p>
   </footer>
-  
   <script src="scripts.js"></script>
   <script>
+    // Populate the lists from JSON data
     fetchHardware();
     fetchLLMGpus();
-    // Event listeners from previous examples
-    document.getElementById('use-case-form').addEventListener('submit', function(e) {
+    // Form listener for general hardware use cases
+    document.getElementById('use-case-form').addEventListener('submit', function (e) {
       e.preventDefault();
       const input = document.getElementById('user-input').value.toLowerCase();
       const recs = document.getElementById('recommendations');
       recs.innerHTML = '';
       let suggestion = '';
       if (input.includes('laptop') || input.includes('coding')) {
-        suggestion = 'System76 Lemur Pro: <a href="https://system76.com/laptops/lemur?aff=your_id">Buy Now</a>';
+        suggestion = 'System76 Lemur Pro: <a href="https://system76.com/laptops/lemur?aff=your_id">Buy now</a>';
       } else if (input.includes('server') || input.includes('home')) {
-        suggestion = 'Raspberry Pi 5: <a href="https://amazon.com/raspberry-pi-5?tag=your_amazon_id">Purchase</a>';
+        suggestion = 'Raspberry Pi 5: <a href="https://amazon.com/raspberry-pi-5?tag=your_amazon_id">Purchase</a>';
       } else {
-        suggestion = 'Browse list above.';
+        suggestion = 'Browse the list above.';
       }
       recs.innerHTML = `<p>${suggestion}</p>`;
     });
-
-    document.getElementById('llm-form').addEventListener('submit', function(e) {
+    // Form listener for specific LLM GPU recommendations
+    document.getElementById('llm-form').addEventListener('submit', function (e) {
       e.preventDefault();
       const input = document.getElementById('llm-input').value.toLowerCase();
       const recs = document.getElementById('llm-recs');
       recs.innerHTML = '';
       let suggestion = '';
       if (input.includes('70b') || input.includes('large model')) {
-        suggestion = 'NVIDIA RTX 4090: <a href="https://amazon.com/rtx-4090?tag=your_id">Buy Now</a>';
+        suggestion = 'NVIDIA RTX 4090: <a href="https://amazon.com/rtx-4090?tag=your_id">Buy now</a>';
       } else if (input.includes('image') || input.includes('gen')) {
-        suggestion = 'NVIDIA H100: <a href="https://nvidia.com/h100?aff=your_id">Purchase</a>';
+        suggestion = 'NVIDIA H100: <a href="https://nvidia.com/h100?aff=your_id">Purchase</a>';
       } else {
-        suggestion = 'Try RTX 4060 Ti.';
+        suggestion = 'Try RTX 4060 Ti.';
       }
       recs.innerHTML = `<p>${suggestion}</p>`;
     });
