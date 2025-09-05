@@ -13,11 +13,172 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
       - name: Fetch and update courses data
         run: |
-          # Fetch the latest free computer‑science courses and append an affiliate ID
-          curl -s "https://api.rss2json.com/v1/api.json?rss_url=https://www.coursera.org/browse/computer-science/free" \
-            | jq '.items | map({title: .title, link: (.link + "?aff=your_aff_id")}) | .[0:5]' > courses.json
+          # Create a Python script to fetch course data
+          cat > fetch_courses.py << 'EOL'
+          import json
+          import requests
+          from bs4 import BeautifulSoup
+          from datetime import datetime
+          
+          # Function to fetch courses from Udemy API
+          def fetch_udemy_courses():
+              try:
+                  # Search for free Linux courses
+                  url = "https://www.udemy.com/api-2.0/courses/?search=linux&price=price-free&ordering=relevance"
+                  headers = {
+                      "Accept": "application/json, text/plain, */*",
+                      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+                  }
+                  response = requests.get(url, headers=headers)
+                  data = response.json()
+                  
+                  courses = []
+                  if 'results' in data:
+                      for course in data['results'][:5]:  # Get top 5 courses
+                          courses.append({
+                              "title": course.get('title', 'Udemy Linux Course'),
+                              "link": f"https://www.udemy.com{course.get('url', '')}?aff=your_aff_id"
+                          })
+                  return courses
+              except Exception as e:
+                  print(f"Error fetching Udemy courses: {e}")
+                  return []
+          
+          # Function to fetch courses from edX
+          def fetch_edx_courses():
+              try:
+                  url = "https://www.edx.org/search?q=linux&tab=course"
+                  response = requests.get(url)
+                  soup = BeautifulSoup(response.text, 'html.parser')
+                  
+                  courses = []
+                  # Find course cards or listings
+                  course_elements = soup.select('.discovery-card')
+                  
+                  for element in course_elements[:3]:  # Get top 3 courses
+                      title_element = element.select_one('.discovery-card-title')
+                      link_element = element.select_one('a')
+                      
+                      if title_element and link_element:
+                          title = title_element.text.strip()
+                          link = link_element.get('href')
+                          if not link.startswith('http'):
+                              link = f"https://www.edx.org{link}"
+                          
+                          courses.append({
+                              "title": f"{title} (edX)",
+                              "link": f"{link}?aff=your_aff_id"
+                          })
+                  
+                  return courses
+              except Exception as e:
+                  print(f"Error fetching edX courses: {e}")
+                  return []
+          
+          # Function to fetch Linux Foundation courses
+          def fetch_linux_foundation_courses():
+              try:
+                  url = "https://training.linuxfoundation.org/resources/?_sft_content_type=free-course"
+                  response = requests.get(url)
+                  soup = BeautifulSoup(response.text, 'html.parser')
+                  
+                  courses = []
+                  # Find course cards or listings
+                  course_elements = soup.select('.post-inner')
+                  
+                  for element in course_elements[:3]:  # Get top 3 courses
+                      title_element = element.select_one('.entry-title')
+                      link_element = element.select_one('a')
+                      
+                      if title_element and link_element:
+                          title = title_element.text.strip()
+                          link = link_element.get('href')
+                          
+                          courses.append({
+                              "title": f"{title} (Linux Foundation)",
+                              "link": f"{link}?aff=your_aff_id"
+                          })
+                  
+                  return courses
+              except Exception as e:
+                  print(f"Error fetching Linux Foundation courses: {e}")
+                  return []
+          
+          # Fallback courses in case all APIs fail
+          fallback_courses = [
+              {
+                  "title": "Introduction to Linux (Linux Foundation)",
+                  "link": "https://training.linuxfoundation.org/training/introduction-to-linux/?aff=your_aff_id"
+              },
+              {
+                  "title": "Linux Command Line Basics (Udacity)",
+                  "link": "https://www.udacity.com/course/linux-command-line-basics--ud595?aff=your_aff_id"
+              },
+              {
+                  "title": "Linux Tools for Developers (edX)",
+                  "link": "https://www.edx.org/course/linux-tools-for-developers?aff=your_aff_id"
+              },
+              {
+                  "title": "Linux Administration Bootcamp (Udemy)",
+                  "link": "https://www.udemy.com/course/linux-administration-bootcamp/?aff=your_aff_id"
+              },
+              {
+                  "title": "Red Hat Enterprise Linux Technical Overview (Red Hat)",
+                  "link": "https://www.redhat.com/en/services/training/rh024-red-hat-linux-technical-overview?aff=your_aff_id"
+              }
+          ]
+          
+          # Main function to fetch all courses
+          def get_all_courses():
+              all_courses = []
+              
+              # Try to fetch from all sources
+              udemy_courses = fetch_udemy_courses()
+              edx_courses = fetch_edx_courses()
+              lf_courses = fetch_linux_foundation_courses()
+              
+              # Combine all courses
+              all_courses.extend(udemy_courses)
+              all_courses.extend(edx_courses)
+              all_courses.extend(lf_courses)
+              
+              # If we couldn't get any courses, use fallback
+              if not all_courses:
+                  all_courses = fallback_courses
+              
+              # Limit to 10 courses maximum
+              return all_courses[:10]
+          
+          # Get all courses
+          courses = get_all_courses()
+          
+          # Add timestamp as a comment
+          timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+          
+          # Write to file
+          with open('courses.json', 'w') as f:
+              f.write(f"// Last updated: {timestamp}\n")
+              json.dump(courses, f, indent=2)
+          
+          print(f"Successfully fetched {len(courses)} courses")
+          EOL
+          
+          # Run the Python script
+          python fetch_courses.py
+          
+          # Show the final courses.json
+          echo "Final courses.json:"
+          cat courses.json
       - name: Commit changes
         run: |
           git config --global user.name 'GitHub Actions'
