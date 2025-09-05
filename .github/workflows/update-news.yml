@@ -5,9 +5,13 @@ on:
     - cron: "0 0 * * *"   # Runs once daily at midnight UTC
   workflow_dispatch:      # Allow manual trigger from GitHub Actions tab
 
+permissions:
+  contents: write         # 👈 give the Actions bot push rights
+
 jobs:
   update-news:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -17,12 +21,14 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install feedparser
+      - name: Install dependencies
         run: pip install feedparser
 
+      - name: List repo files (debug)
+        run: ls -R
+
       - name: Update JSON feeds
-        run: |
-          python scripts/update_feeds.py
+        run: python scripts/update_feeds.py
 
       - name: Commit and push changes
         run: |
@@ -31,4 +37,6 @@ jobs:
           git add *.json
           git commit -m "Auto-update news feeds" || echo "No changes"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
