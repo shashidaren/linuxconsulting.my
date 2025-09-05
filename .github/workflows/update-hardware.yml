@@ -1,25 +1,23 @@
 name: Auto-Update Hardware and GPUs
-
 on:
   schedule:
-    - cron: '0 0 * * *'  # Daily at midnight UTC
-  workflow_dispatch:  # Allows manual trigger
-
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
+      - uses: actions/checkout@v3
       - name: Fetch and update hardware data
         run: |
-          curl -s 'https://api.rss2json.com/v1/api.json?rss_url=https://ubuntu.com/certified/rss' | jq '.items | map({title: .title, link: .link + "?tag=your_amazon_id"}) | .[0:5]' > hardware.json
-          
+          curl -s "https://api.rss2json.com/v1/api.json?rss_url=https://ubuntu.com/certified/rss" \
+            | jq -r '.items | map({title: .title, link: (.link + "?tag=your_amazon_id")}) | .[0:5]' \
+            > hardware.json
       - name: Fetch and update LLM GPUs data
         run: |
-          curl -s 'https://api.rss2json.com/v1/api.json?rss_url=https://nvidia.com/en-us/data-center/rss' | jq '.items | map({title: .title, link: .link + "?tag=your_amazon_id"}) | .[0:5]' > llm-gpus.json
-
+          curl -s "https://api.rss2json.com/v1/api.json?rss_url=https://nvidia.com/en-us/data-center/rss" \
+            | jq -r '.items | map({title: .title, link: (.link + "?tag=your_amazon_id")}) | .[0:5]' \
+            > llm-gpus.json
       - name: Commit changes
         run: |
           git config --global user.name 'GitHub Actions'
