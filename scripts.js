@@ -1,26 +1,130 @@
-async function fetchJSON(file, listId, emptyMessage) {
-  const list = document.getElementById(listId);
-  try {
-    const response = await fetch(file);
-    if (!response.ok) throw new Error('Data not available');
-    const data = await response.json();
-    if (Array.isArray(data) && list) {
-      data.forEach(item => {
-        const div = document.createElement('div');
-        div.innerHTML = `<h3>${item.title}</h3><p><a href="${item.link}" target="_blank"><i class="fas fa-external-link-alt"></i> Read more</a></p>`;
-        list.appendChild(div);
-      });
+/*
+ * Shared functions for loading JSON news and rendering lists for Tech News MY.
+ * Each function fetches data from its corresponding JSON file and populates a
+ * designated container in the DOM. A home page helper fetches the top
+ * three stories from each category to display a dashboard overview.
+ */
+
+// Helper to fetch and parse JSON from a given path
+async function fetchJson(path) {
+    const response = await fetch(path);
+    if (!response.ok) {
+        throw new Error(`Failed to fetch ${path}: ${response.status}`);
     }
-  } catch (err) {
-    if (list) {
-      list.innerHTML = '<div class="error-message"><p><i class="fas fa-exclamation-circle"></i> ' + emptyMessage + '</p></div>';
-    }
-    console.error('Failed to fetch', file, ':', err);
-  }
+    return await response.json();
 }
 
-function fetchLocalNews(){fetchJSON('news_local.json','local-news-list','No Malaysia news available');}
-function fetchGlobalNews(){fetchJSON('news_global.json','global-news-list','No global news available');}
-function fetchAINews(){fetchJSON('ai_news.json','ai-news-list','No AI news available');}
-function fetchProducts(){fetchJSON('products.json','products-list','No product news available');}
-function fetchCerts(){fetchJSON('certs.json','certs-list','No certification info available');}
+// Helper to render a list of news items into a container element
+function populateList(listId, items) {
+    const container = document.getElementById(listId);
+    if (!container) return;
+    container.innerHTML = '';
+    items.forEach(item => {
+        const div = document.createElement('div');
+        div.classList.add('news-item');
+        div.innerHTML = `<h3>${item.title}</h3>` +
+                        `<p><a href="${item.link}" target="_blank">Read more &raquo;</a></p>`;
+        container.appendChild(div);
+    });
+}
+
+// Fetch functions for individual pages
+async function fetchLocalNews() {
+    try {
+        const data = await fetchJson('news_local.json');
+        populateList('local-news-list', data);
+    } catch (err) {
+        const target = document.getElementById('local-news-list');
+        if (target) target.innerHTML = '<p class="error-message">Unable to load local news.</p>';
+        console.error(err);
+    }
+}
+
+async function fetchGlobalNews() {
+    try {
+        const data = await fetchJson('news_global.json');
+        populateList('global-news-list', data);
+    } catch (err) {
+        const target = document.getElementById('global-news-list');
+        if (target) target.innerHTML = '<p class="error-message">Unable to load global news.</p>';
+        console.error(err);
+    }
+}
+
+async function fetchAINews() {
+    try {
+        const data = await fetchJson('ai_news.json');
+        populateList('ai-news-list', data);
+    } catch (err) {
+        const target = document.getElementById('ai-news-list');
+        if (target) target.innerHTML = '<p class="error-message">Unable to load AI news.</p>';
+        console.error(err);
+    }
+}
+
+async function fetchProducts() {
+    try {
+        const data = await fetchJson('products.json');
+        populateList('products-list', data);
+    } catch (err) {
+        const target = document.getElementById('products-list');
+        if (target) target.innerHTML = '<p class="error-message">Unable to load product releases.</p>';
+        console.error(err);
+    }
+}
+
+async function fetchCerts() {
+    try {
+        const data = await fetchJson('certs.json');
+        populateList('certs-list', data);
+    } catch (err) {
+        const target = document.getElementById('certs-list');
+        if (target) target.innerHTML = '<p class="error-message">Unable to load certifications.</p>';
+        console.error(err);
+    }
+}
+
+// Fetch limited items for the home page dashboard
+async function fetchHomeNews() {
+    // Each fetch is independent so failure in one doesn't block others
+    try {
+        const data = await fetchJson('news_local.json');
+        populateList('home-local-list', data.slice(0, 3));
+    } catch (err) {
+        const target = document.getElementById('home-local-list');
+        if (target) target.innerHTML = '<p class="error-message">Unable to load Malaysia news.</p>';
+        console.error(err);
+    }
+    try {
+        const data = await fetchJson('news_global.json');
+        populateList('home-global-list', data.slice(0, 3));
+    } catch (err) {
+        const target = document.getElementById('home-global-list');
+        if (target) target.innerHTML = '<p class="error-message">Unable to load global news.</p>';
+        console.error(err);
+    }
+    try {
+        const data = await fetchJson('ai_news.json');
+        populateList('home-ai-list', data.slice(0, 3));
+    } catch (err) {
+        const target = document.getElementById('home-ai-list');
+        if (target) target.innerHTML = '<p class="error-message">Unable to load AI news.</p>';
+        console.error(err);
+    }
+    try {
+        const data = await fetchJson('products.json');
+        populateList('home-products-list', data.slice(0, 3));
+    } catch (err) {
+        const target = document.getElementById('home-products-list');
+        if (target) target.innerHTML = '<p class="error-message">Unable to load product releases.</p>';
+        console.error(err);
+    }
+    try {
+        const data = await fetchJson('certs.json');
+        populateList('home-certs-list', data.slice(0, 3));
+    } catch (err) {
+        const target = document.getElementById('home-certs-list');
+        if (target) target.innerHTML = '<p class="error-message">Unable to load certifications.</p>';
+        console.error(err);
+    }
+}

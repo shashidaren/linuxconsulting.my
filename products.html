@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Releases - Tech News MY</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Releases | Tech News MY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Product Releases</h1>
-    <p>New IT products, gadgets, and solutions in the market.</p>
-  </header>
-  <nav>
-    <a href="index.html"><i class="fas fa-home"></i> Home</a>
-    <a href="malaysia-news.html"><i class="fas fa-newspaper"></i> Malaysia News</a>
-    <a href="global-news.html"><i class="fas fa-globe"></i> Global News</a>
-    <a href="products.html" class="active"><i class="fas fa-bullhorn"></i> Product Releases</a>
-    <a href="ai-news.html"><i class="fas fa-robot"></i> AI News</a>
-    <a href="certifications.html"><i class="fas fa-graduation-cap"></i> Certifications</a>
-  </nav>
-  <main>
-    <section>
-      <div class="card">
-        <h2><i class="fas fa-bullhorn"></i> Product Releases</h2>
-        <div id="products-list"></div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Tech News MY. All rights reserved.</p>
-  </footer>
-  <script src="scripts.js"></script>
-  <script>fetchProducts();</script>
+    <header>
+        <h1>Product &amp; Solution Releases</h1>
+        <p>Latest hardware, software and IT solution announcements.</p>
+    </header>
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="malaysia-news.html"><i class="fas fa-newspaper"></i> Malaysia News</a>
+        <a href="global-news.html"><i class="fas fa-globe"></i> Global News</a>
+        <a href="products.html"><i class="fas fa-box-open"></i> Product Releases</a>
+        <a href="ai-news.html"><i class="fas fa-robot"></i> AI News</a>
+        <a href="certifications.html"><i class="fas fa-graduation-cap"></i> Certifications</a>
+    </nav>
+    <main>
+        <section>
+            <div class="card card-with-image card-products">
+                <h2><i class="fas fa-box-open"></i> Product &amp; Solution Releases</h2>
+                <p>Keep track of new gadgets, software releases and enterprise solutions entering the market.</p>
+                <div id="products-list"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Tech News MY. All rights reserved. &nbsp;|&nbsp; <a href="mailto:support@linuxcomputing.my" style="color:#ffffff;text-decoration:underline;">support@linuxcomputing.my</a></p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+        // Populate the products section
+        fetchProducts();
+    </script>
 </body>
 </html>
