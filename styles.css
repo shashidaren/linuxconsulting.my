@@ -1,314 +1,169 @@
-/*
- * Styling for the Tech News MY website.
- * This stylesheet adds color and warmth to the layout, moving away from a black
- * and white palette. The design uses a primary blue tone for navigation and
- * headings, a soft light background for the body, and subtle shadows for
- * cards. Adjust the CSS variables below to tweak the site's color scheme.
- */
-
 :root {
-  /* Colour palette for a more professional look */
-  /* The primary colour is a dark navy used for navigation, headers and footer. */
-  --primary-color: #0a2540;
-  /* Secondary colour for hover states on navigation links. */
-  --secondary-color: #143d5c;
-  /* Accent colour used for buttons and highlights. A warm orange adds contrast against the dark navy. */
-  --accent-color: #f57c00;
-  /* Soft off‑white background to keep the page light and spacious. */
-  --background-color: #f7fafc;
-  /* Cards remain white to stand out from the background. */
-  --card-background: #ffffff;
-  /* Footer uses the same dark navy as the header/nav for consistency. */
-  --footer-bg: #0a2540;
-  /* Base text colour for readability. */
-  --text-color: #333333;
-  /* Link colour matches the primary colour but can be overridden with accent. */
-  --link-color: #0a2540;
-  --border-radius: 8px;
-  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  --transition: all 0.3s ease;
-  /* Gradient backgrounds for each category card on the homepage */
-  --malaysia-bg: linear-gradient(120deg, #0a2540, #155799);
-  --global-bg: linear-gradient(120deg, #0a2540, #005f73);
-  --ai-bg: linear-gradient(120deg, #0a2540, #512da8);
-  --products-bg: linear-gradient(120deg, #0a2540, #00695c);
-  --certs-bg: linear-gradient(120deg, #0a2540, #7b1fa2);
-}
-
-/* Reset default margins */
-body, h1, h2, h3, p {
-  margin: 0;
+    --primary-bg: #333;
+    --secondary-bg: #444;
+    --text-light: #fff;
+    --text-dark: #333;
+    --body-bg: #f4f4f4;
+    --link-color: #007bff;
+    --link-hover: #0056b3;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.5;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: var(--body-bg);
+    color: var(--text-dark);
 }
 
 header {
-  background: var(--primary-color);
-  color: #ffffff;
-  text-align: center;
-  padding: 1.5rem 1rem;
-  box-shadow: var(--box-shadow);
+    background: var(--primary-bg);
+    color: var(--text-light);
+    padding: 1.5rem 1rem;
+    text-align: center;
 }
 
-/* Lighten the subheading text inside headers to improve contrast against dark backgrounds */
-header p {
-  color: #e0e7ef;
-}
+header h1 { margin: 0; }
+header p { margin: 0.5rem 0 0; }
 
 nav {
-  background: var(--primary-color);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: var(--secondary-bg);
+    padding: 0.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
-  color: #ffffff;
-  padding: 0.75rem 1rem;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-weight: 500;
-  transition: var(--transition);
+    color: var(--text-light);
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+    margin: 0.2rem;
 }
 
-nav a:hover {
-  background: var(--secondary-color);
+nav a:hover, nav a.active {
+    background-color: #555;
 }
+
+.hero {
+    position: relative;
+    text-align: center;
+    color: var(--text-light);
+    background: #555;
+    padding: 3rem 1rem;
+}
+
+.hero-slider {
+    position: relative;
+    height: 120px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active { opacity: 1; }
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--link-color);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover { background-color: var(--link-hover); }
 
 main {
-  flex: 1;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: auto;
 }
 
-section {
-  padding: 1rem;
-  max-width: 960px;
-  margin: 0 auto;
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
 }
 
 .card {
-  background: var(--card-background);
-  border-radius: var(--border-radius);
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  box-shadow: var(--box-shadow);
-  transition: var(--transition);
+    background: var(--text-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Enhanced card interaction with scale effect */
 .card:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.card h2 {
-  margin-bottom: 0.5rem;
-  color: var(--primary-color);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.card-with-image {
+    background-size: cover;
+    background-position: center;
+    color: var(--text-light);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+}
+
+.card-with-image h2 { margin-top: 0; }
+.card-with-image .more-link {
+    color: var(--text-light);
+    text-decoration: underline;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.news-list-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .news-item {
-  margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
 }
-
-.news-item h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
-}
-
+.news-item:last-child { border-bottom: none; }
+.news-item h3 { margin: 0 0 0.5rem 0; }
 .news-item a {
-  color: var(--link-color);
-  text-decoration: none;
-  font-weight: 600;
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: bold;
 }
+.news-item a:hover { text-decoration: underline; }
 
-.news-item a:hover {
-  text-decoration: underline;
-}
-
-/* Styling for 'More' links in cards */
-.more-link {
-  color: var(--accent-color);
-  font-weight: 600;
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-.more-link:hover {
-  text-decoration: underline;
+.placeholder {
+    text-align: center;
+    padding: 2rem;
+    color: #777;
 }
 
 footer {
-  background: var(--footer-bg);
-  color: #ffffff;
-  text-align: center;
-  padding: 1rem 0;
-  box-shadow: var(--box-shadow);
-  font-size: 0.875rem;
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--primary-bg);
+    color: var(--text-light);
+    margin-top: 2rem;
 }
-
-/* Hero section for the homepage */
-.hero {
-  background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.85)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1350&q=80');
-  /* Use a high‑quality tech themed image; fallback to gradient if image fails */
-  background-size: cover;
-  background-position: center;
-  color: #ffffff;
-  text-align: center;
-  padding: 4rem 1rem;
-  margin-bottom: 2rem;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
-  color: #e0e7ef;
-}
-
-.hero .cta-button {
-  background: var(--accent-color);
-  color: #ffffff;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius);
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--transition);
-  display: inline-block;
-}
-
-.hero .cta-button:hover {
-  background: #e06d00; /* darken accent on hover */
-}
-
-/* Responsive adjustments for hero text on smaller screens */
-@media (max-width: 768px) {
-  .hero h2 {
-    font-size: 2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-/* Grid container for the home page cards */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-/* Card styling when a background image is desired */
-.card-with-image {
-  position: relative;
-  overflow: hidden;
-  color: #ffffff;
-  background: transparent;
-}
-
-.card-with-image::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  z-index: -2;
-}
-
-/* Dark overlay to improve text legibility over images */
-.card-with-image::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 37, 64, 0.65);
-  z-index: -1;
-}
-
-.card-with-image h2,
-.card-with-image p,
-.card-with-image a {
-  color: #ffffff;
-}
-
-/* Specific background images for each card category on the home page */
-/* Use gradient backgrounds for each category instead of remote images */
-.card-malaysia::before {
-  background-image: var(--malaysia-bg);
-}
-
-.card-global::before {
-  background-image: var(--global-bg);
-}
-
-.card-ai::before {
-  background-image: var(--ai-bg);
-}
-
-.card-products::before {
-  background-image: var(--products-bg);
-}
-
-.card-certs::before {
-  background-image: var(--certs-bg);
-}
-
-/* Responsive navigation: stack nav links on small screens */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  nav a {
-    justify-content: center;
-  }
-}
-/* Slider styles for the hero banner */
-.hero-slider {
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-}
-.hero-slider .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-.hero-slider .slide.active {
-  opacity: 1;
-}
-.hero-slider h2 {
-  font-size: 2.75rem;
-  margin-bottom: 0.5rem;
-}
-.hero-slider p {
-  font-size: 1.25rem;
-  max-width: 650px;
-  margin: 0 auto 1.5rem;
-  color: #e0e7ef;
+footer a {
+    color: var(--text-light);
+    text-decoration: underline;
 }
