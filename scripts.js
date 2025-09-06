@@ -19,14 +19,6 @@ function populateList(listId, items) {
     const container = document.getElementById(listId);
     if (!container) return;
     container.innerHTML = '';
-    // Display a placeholder if no items are provided
-    if (!Array.isArray(items) || items.length === 0) {
-        const msg = document.createElement('p');
-        msg.classList.add('error-message');
-        msg.textContent = 'No items available at the moment. Please check back soon.';
-        container.appendChild(msg);
-        return;
-    }
     items.forEach(item => {
         const div = document.createElement('div');
         div.classList.add('news-item');
@@ -135,26 +127,4 @@ async function fetchHomeNews() {
         if (target) target.innerHTML = '<p class="error-message">Unable to load certifications.</p>';
         console.error(err);
     }
-}
-/**
- * Initialize a simple hero slider for the home page.
- * Cycles through slides inside .hero-slider every 4 seconds.
- */
-function initializeHeroSlider() {
-    const slider = document.querySelector('.hero-slider');
-    if (!slider) return;
-    const slides = slider.querySelectorAll('.slide');
-    let current = 0;
-    setInterval(() => {
-        slides[current].classList.remove('active');
-        current = (current + 1) % slides.length;
-        slides[current].classList.add('active');
-    }, 4000);
-}
-
-// Automatically initialize the hero slider when DOM is loaded
-if (document.readyState !== 'loading') {
-    initializeHeroSlider();
-} else {
-    document.addEventListener('DOMContentLoaded', initializeHeroSlider);
 }
