@@ -4,25 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech News MY</title>
-    <!-- Main stylesheet for site colors and layout -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
     <header>
         <h1>Welcome to Tech News MY</h1>
-        <p>Your hub for Malaysia tech news, global headlines, AI breakthroughs, product launches and certifications.</p>
+        <p>Your hub for tech news, global headlines, AI breakthroughs, and more.</p>
     </header>
-    <nav>
-        <a href="index.html"><i class="fas fa-home"></i> Home</a>
-        <a href="malaysia-news.html"><i class="fas fa-newspaper"></i> Malaysia News</a>
-        <a href="global-news.html"><i class="fas fa-globe"></i> Global News</a>
-        <a href="products.html"><i class="fas fa-box-open"></i> Product Releases</a>
-        <a href="ai-news.html"><i class="fas fa-robot"></i> AI News</a>
-        <a href="certifications.html"><i class="fas fa-graduation-cap"></i> Certifications</a>
-    </nav>
-        <!-- Hero banner with a simple rotating slider to draw attention -->
+    <nav id="main-nav"></nav>
+
     <div class="hero">
         <div class="hero-slider">
             <div class="slide active">
@@ -38,46 +29,19 @@
                 <p>Learn about the latest in artificial intelligence and upskill with IT certifications.</p>
             </div>
         </div>
-        <a href="malaysia-news.html" class="cta-button">Start Exploring</a>
+        <a href="category.html?topic=local" class="cta-button">Start Exploring</a>
     </div>
+
     <main>
-        <!-- Overview cards for each news section -->
-        <section class="cards-grid">
-            <div class="card card-with-image card-malaysia">
-                <h2><i class="fas fa-newspaper"></i> Malaysia Tech News</h2>
-                <div id="home-local-list"></div>
-                <p><a href="malaysia-news.html" class="more-link">More Malaysia News &raquo;</a></p>
-            </div>
-            <div class="card card-with-image card-global">
-                <h2><i class="fas fa-globe"></i> Global Tech Headlines</h2>
-                <div id="home-global-list"></div>
-                <p><a href="global-news.html" class="more-link">More Global News &raquo;</a></p>
-            </div>
-            <div class="card card-with-image card-ai">
-                <h2><i class="fas fa-robot"></i> AI &amp; Trends</h2>
-                <div id="home-ai-list"></div>
-                <p><a href="ai-news.html" class="more-link">More AI News &raquo;</a></p>
-            </div>
-            <div class="card card-with-image card-products">
-                <h2><i class="fas fa-box-open"></i> Product Releases</h2>
-                <div id="home-products-list"></div>
-                <p><a href="products.html" class="more-link">More Products &raquo;</a></p>
-            </div>
-            <div class="card card-with-image card-certs">
-                <h2><i class="fas fa-graduation-cap"></i> Certifications &amp; Courses</h2>
-                <div id="home-certs-list"></div>
-                <p><a href="certifications.html" class="more-link">More Certifications &raquo;</a></p>
-            </div>
+        <section class="cards-grid" id="home-cards-grid">
+            <!-- Category cards will be dynamically inserted here -->
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2025 Tech News MY. All rights reserved. &nbsp;|&nbsp; <a href="mailto:support@linuxcomputing.my" style="color:#ffffff;text-decoration:underline;">support@linuxcomputing.my</a></p>
+        <p>&copy; 2025 Tech News MY. All rights reserved. | <a href="mailto:support@linuxcomputing.my">Contact Us</a></p>
     </footer>
-    <!-- Shared JavaScript for loading JSON data -->
+
     <script src="scripts.js"></script>
-    <script>
-        // Populate the home page with the latest items from each category
-        fetchHomeNews();
-    </script>
 </body>
 </html>
