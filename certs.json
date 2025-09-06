@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "title": "AWS Certified Solutions Architect – 50% Off Exam Voucher",
+    "link": "https://example.com/cert1"
+  },
+  {
+    "title": "Free Python for Data Science Course",
+    "link": "https://example.com/cert2"
+  },
+  {
+    "title": "New Azure Fundamentals Certification Path Launched",
+    "link": "https://example.com/cert3"
+  },
+  {
+    "title": "Discounted CCNA Network Associate Training Bundle",
+    "link": "https://example.com/cert4"
+  },
+  {
+    "title": "Google Cloud Digital Leader Course Now Free",
+    "link": "https://example.com/cert5"
+  }
+]
