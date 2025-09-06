@@ -105,10 +105,9 @@ section {
   transition: var(--transition);
 }
 
-/* Enhanced card interaction with scale effect */
 .card:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .card h2 {
@@ -284,31 +283,4 @@ footer {
   nav a {
     justify-content: center;
   }
-}
-/* Slider styles for the hero banner */
-.hero-slider {
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-}
-.hero-slider .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-.hero-slider .slide.active {
-  opacity: 1;
-}
-.hero-slider h2 {
-  font-size: 2.75rem;
-  margin-bottom: 0.5rem;
-}
-.hero-slider p {
-  font-size: 1.25rem;
-  max-width: 650px;
-  margin: 0 auto 1.5rem;
-  color: #e0e7ef;
 }
