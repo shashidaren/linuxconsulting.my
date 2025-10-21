@@ -1,5 +1,9 @@
 [
   {
+    "title": "Arm provides edge AI platform to startups via flexible access",
+    "link": "https://www.artificialintelligence-news.com/news/arm-provides-edge-ai-platform-startups-flexible-access/"
+  },
+  {
     "title": "Google AI tool pinpoints genetic drivers of cancer",
     "link": "https://www.artificialintelligence-news.com/news/google-ai-tool-pinpoints-genetic-drivers-of-cancer/"
   },
@@ -34,9 +38,5 @@
   {
     "title": "Salesforce commits $15 billion to boost AI growth in San Francisco",
     "link": "https://www.artificialintelligence-news.com/news/salesforce-commits-15-billion-to-boost-ai-growth-in-san-francisco/"
-  },
-  {
-    "title": "Meta and Oracle choose NVIDIA Spectrum-X for AI data centres",
-    "link": "https://www.artificialintelligence-news.com/news/meta-and-oracle-choose-nvidia-spectrum-x-for-ai-data-centres/"
   }
 ]
