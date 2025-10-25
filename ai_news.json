@@ -1,5 +1,17 @@
 [
   {
+    "title": "OpenAI connects ChatGPT to enterprise data to surface knowledge",
+    "link": "https://www.artificialintelligence-news.com/news/openai-connects-chatgpt-enterprise-data-surface-knowledge/"
+  },
+  {
+    "title": "Anthropic’s billion-dollar TPU expansion signals a strategic shift in enterprise AI infrastructure",
+    "link": "https://www.artificialintelligence-news.com/news/anthropic-tpu-expansion-enterprise-ai-infrastructure/"
+  },
+  {
+    "title": "Open-source AI video from Lightricks offers 4K, sound, and faster rendering",
+    "link": "https://www.artificialintelligence-news.com/news/open-source-ai-video-from-lightricks-offers-4k-sound-and-faster-rendering/"
+  },
+  {
     "title": "Autonomy in the real world? Druid AI unveils AI agent ‘factory’",
     "link": "https://www.artificialintelligence-news.com/news/druid-ai-agentic-factory-automation-in-the-real-world/"
   },
@@ -26,17 +38,5 @@
   {
     "title": "How AI adoption is moving IT operations from reactive to proactive",
     "link": "https://www.artificialintelligence-news.com/news/how-ai-adoption-it-operations-reactive-to-proactive/"
-  },
-  {
-    "title": "Businesses still face the AI data challenge",
-    "link": "https://www.artificialintelligence-news.com/news/businesses-still-face-the-ai-data-challenge/"
-  },
-  {
-    "title": "How accounting firms are using AI agents to reclaim time and trust",
-    "link": "https://www.artificialintelligence-news.com/news/finance-ai-reclaiming-time-trust-with-openai-chatgpt/"
-  },
-  {
-    "title": "China’s generative AI user base doubles to 515 million in six months",
-    "link": "https://www.artificialintelligence-news.com/news/china-ai-adoption-doubles-515-million-users/"
   }
 ]
