@@ -1,5 +1,29 @@
 [
   {
+    "title": "OpenAI spreads $600B cloud AI bet across AWS, Oracle, Microsoft",
+    "link": "https://www.artificialintelligence-news.com/news/openai-spreads-600b-cloud-ai-bet-aws-oracle-microsoft/"
+  },
+  {
+    "title": "AI browsers are a significant security threat",
+    "link": "https://www.artificialintelligence-news.com/news/ai-browser-security-issue-shadow-ai-malware/"
+  },
+  {
+    "title": "From ambition to accountability: Quantifying AI ROI in strategy",
+    "link": "https://www.artificialintelligence-news.com/news/quantifying-ai-roi-leading-resolutions/"
+  },
+  {
+    "title": "DevOps for AI: Continuous deployment pipelines for machine learning systems",
+    "link": "https://www.artificialintelligence-news.com/news/devops-for-ai-continuous-deployment-pipelines-for-machine-learning-systems/"
+  },
+  {
+    "title": "NVIDIA and South Korea align on sovereign AI at APEC CEO Summit",
+    "link": "https://www.artificialintelligence-news.com/news/nvidia-and-south-korea-align-on-sovereign-ai-at-apec-summit/"
+  },
+  {
+    "title": "Qualcomm unveils AI data centre chips to crack the Inference market",
+    "link": "https://www.artificialintelligence-news.com/news/qualcomm-ai-data-centre-chips-ai200-ai250/"
+  },
+  {
     "title": "How LeapXpert uses AI to bring order and oversight to business messaging",
     "link": "https://www.artificialintelligence-news.com/news/how-leapxpert-uses-ai-to-bring-order-and-oversight-to-business-messaging/"
   },
@@ -14,29 +38,5 @@
   {
     "title": "Thailand becomes one of the first in Asia to get the Sora app",
     "link": "https://www.artificialintelligence-news.com/news/thailand-becomes-one-of-the-first-in-asia-to-get-the-sora-app/"
-  },
-  {
-    "title": "Inside Samsung’s semiconductor recovery: How AI demand reversed four quarters of decline",
-    "link": "https://www.artificialintelligence-news.com/news/samsung-semiconductor-recovery-q3-2025/"
-  },
-  {
-    "title": "Reco wants to eliminate the blind spot of shadow AI",
-    "link": "https://www.artificialintelligence-news.com/news/reco-wants-to-eliminate-the-blind-spot-of-shadow-ai/"
-  },
-  {
-    "title": "Cursor 2.0 pivots to multi-agent AI coding, debuts Composer model",
-    "link": "https://www.artificialintelligence-news.com/news/cursor-2-pivots-multi-agent-ai-coding-debuts-composer-model/"
-  },
-  {
-    "title": "Migrating AI from Nvidia to Huawei: Opportunities and trade-offs",
-    "link": "https://www.artificialintelligence-news.com/news/migrating-ai-from-nvidia-to-huawei-opportunities-and-trade-offs/"
-  },
-  {
-    "title": "Counterintuitive’s new chip aims escape the AI ‘twin trap’",
-    "link": "https://www.artificialintelligence-news.com/news/ai-twin-trap-next-generation-chip-and-software/"
-  },
-  {
-    "title": "OpenAI unveils open-weight AI safety models for developers",
-    "link": "https://www.artificialintelligence-news.com/news/openai-unveils-open-weight-ai-safety-models-for-developers/"
   }
 ]
