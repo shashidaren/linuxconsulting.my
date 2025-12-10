@@ -1,5 +1,21 @@
 [
   {
+    "title": "Accenture and Anthropic partner to boost enterprise AI integration",
+    "link": "https://www.artificialintelligence-news.com/news/accenture-anthropic-partner-boost-enterprise-ai-integration/"
+  },
+  {
+    "title": "OpenAI targets AI skills gap with new certification standards",
+    "link": "https://www.artificialintelligence-news.com/news/openai-targets-ai-skills-gap-with-new-certification-standards/"
+  },
+  {
+    "title": "How people really use AI: The surprising truth from analysing billions of interactions",
+    "link": "https://www.artificialintelligence-news.com/news/how-people-really-use-ai-the-surprising-truth-from-analysing-billions-of-interactions/"
+  },
+  {
+    "title": "Newsweek: Building AI-resilience for the next era of information",
+    "link": "https://www.artificialintelligence-news.com/news/newsweek-building-ai-resilience-for-the-next-era-of-information/"
+  },
+  {
     "title": "Instacart pilots agentic commerce by embedding in ChatGPT",
     "link": "https://www.artificialintelligence-news.com/news/instacart-pilots-agentic-commerce-by-embedding-in-chatgpt/"
   },
@@ -22,21 +38,5 @@
   {
     "title": "Agentic AI smartphones: ByteDance signals opportunity beyond consumer hype",
     "link": "https://www.artificialintelligence-news.com/news/agentic-ai-smartphones-enterprise-adoption/"
-  },
-  {
-    "title": "UK and Germany plan to commercialise quantum supercomputing",
-    "link": "https://www.artificialintelligence-news.com/news/uk-and-germany-plan-to-commercialise-quantum-supercomputing/"
-  },
-  {
-    "title": "Aluminium OS is the AI-powered successor to ChromeOS",
-    "link": "https://www.artificialintelligence-news.com/news/aluminium-os-is-the-next-iteration-for-the-chromebook-range-chromeos-chrome-os/"
-  },
-  {
-    "title": "AWS re:Invent 2025: Frontier AI agents replace chatbots",
-    "link": "https://www.artificialintelligence-news.com/news/aws-reinvent-2025-frontier-ai-agents-replace-chatbots/"
-  },
-  {
-    "title": "Decart uses AWS Trainium3 for real-time video generation",
-    "link": "https://www.artificialintelligence-news.com/news/decart-uses-aws-trainium3-for-real-time-video-generation/"
   }
 ]
