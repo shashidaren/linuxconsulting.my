@@ -1,5 +1,9 @@
 [
   {
+    "title": "Insurers betting big on AI: Accenture",
+    "link": "https://www.artificialintelligence-news.com/news/accenture-report-on-ai-in-insurance-sector/"
+  },
+  {
     "title": "Deloitte sounds alarm as AI agent deployment outruns safety frameworks",
     "link": "https://www.artificialintelligence-news.com/news/deloitte-agentic-ai-guidelines-published/"
   },
@@ -20,7 +24,7 @@
     "link": "https://www.artificialintelligence-news.com/news/gallup-workforce-ai-shows-details-of-ml-adoption-in-us-workplaces/"
   },
   {
-    "title": "Inside Standard Chartered’s approach to running AI under privacy rules",
+    "title": "How Standard Chartered runs AI under privacy rules",
     "link": "https://www.artificialintelligence-news.com/news/how-standard-chartered-runs-ai-under-privacy-rules/"
   },
   {
@@ -34,9 +38,5 @@
   {
     "title": "Lowering the barriers databases place in the way of strategy, with RavenDB",
     "link": "https://www.artificialintelligence-news.com/news/lowering-the-barriers-databases-place-in-the-way-of-strategy-with-ravendb/"
-  },
-  {
-    "title": "Cold snap highlight’s airlines’ proactive use of AI",
-    "link": "https://www.artificialintelligence-news.com/news/cold-snap-highlights-airlines-proactive-use-of-ai-airline-industrys-use-of-ai/"
   }
 ]
