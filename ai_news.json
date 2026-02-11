@@ -1,5 +1,13 @@
 [
   {
+    "title": "Chinese hyperscalers and industry-specific agentic AI",
+    "link": "https://www.artificialintelligence-news.com/news/chinese-hyperscalers-and-industry-specific-chinas-agentic-ai/"
+  },
+  {
+    "title": "Agentic AI in healthcare: How Life Sciences marketing could achieve $450B in value by 2028",
+    "link": "https://www.artificialintelligence-news.com/news/agentic-ai-healthcare-pharma-marketing-450b-value-2028/"
+  },
+  {
     "title": "What AI can (and can’t) tell us about XRP in ETF-driven markets",
     "link": "https://www.artificialintelligence-news.com/news/what-ai-can-and-cant-tell-us-about-xrp-in-etf-driven-markets/"
   },
@@ -10,18 +18,6 @@
   {
     "title": "Cryptocurrency markets a testbed for AI forecasting models",
     "link": "https://www.artificialintelligence-news.com/news/cryptocurrency-markets-a-testbed-for-ai-forecasting-models/"
-  },
-  {
-    "title": "Goldman Sachs tests autonomous AI agents for process-heavy work",
-    "link": "https://www.artificialintelligence-news.com/news/goldman-sachs-tests-autonomous-ai-agents-for-process-heavy-work/"
-  },
-  {
-    "title": "How separating logic and search boosts AI agent scalability",
-    "link": "https://www.artificialintelligence-news.com/news/how-separating-logic-and-search-boosts-ai-agent-scalability/"
-  },
-  {
-    "title": "Intuit, Uber, and State Farm trial AI agents inside enterprise workflows",
-    "link": "https://www.artificialintelligence-news.com/news/intuit-uber-and-state-farm-trial-ai-agents-inside-enterprise-workflows/"
   },
   {
     "title": "SuperCool review: Evaluating the reality of autonomous creation",
@@ -36,7 +32,11 @@
     "link": "https://www.artificialintelligence-news.com/news/ai-expo-2026-day-2-moving-experimental-pilots-ai-production/"
   },
   {
-    "title": "Microsoft unveils method to detect sleeper agent backdoors",
-    "link": "https://www.artificialintelligence-news.com/news/microsoft-unveils-method-detect-sleeper-agent-backdoors/"
+    "title": "OpenAI’s enterprise push: The hidden story behind AI’s sales race",
+    "link": "https://www.artificialintelligence-news.com/news/openai-ai-consultants-enterprise-adoption-challenges/"
+  },
+  {
+    "title": "AI Expo 2026 Day 1: Governance and data readiness enable the agentic enterprise",
+    "link": "https://www.artificialintelligence-news.com/news/ai-expo-2026-day-1-governance-data-readiness-enable-agentic-enterprise/"
   }
 ]
