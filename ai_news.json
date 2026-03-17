@@ -1,5 +1,17 @@
 [
   {
+    "title": "US Treasury publishes AI risk Guidebook for financial institutions",
+    "link": "https://www.artificialintelligence-news.com/news/us-treasury-publishes-ai-risk-governance-guidebook-for-financial-institutions/"
+  },
+  {
+    "title": "NTT DATA and NVIDIA bring enterprise AI factories to production scale",
+    "link": "https://www.artificialintelligence-news.com/news/ntt-data-nvidia-enterprise-ai-factories-production/"
+  },
+  {
+    "title": "OpenAI’s Frontier puts AI agents in a fight SaaS can’t afford to lose",
+    "link": "https://www.artificialintelligence-news.com/news/openai-frontier-enterprise-ai-agents-saas/"
+  },
+  {
     "title": "E.SUN Bank and IBM build AI governance framework for banking",
     "link": "https://www.artificialintelligence-news.com/news/e-sun-bank-and-ibm-build-ai-governance-framework-for-banking/"
   },
@@ -26,17 +38,5 @@
   {
     "title": "Manulife moves AI agents into core financial workflows",
     "link": "https://www.artificialintelligence-news.com/news/manulife-moves-ai-agents-into-core-financial-workflows/"
-  },
-  {
-    "title": "How physical AI integration accelerates vehicle innovation",
-    "link": "https://www.artificialintelligence-news.com/news/how-physical-ai-integration-accelerates-vehicle-innovation/"
-  },
-  {
-    "title": "ABB: Physical AI simulation boosts ROI for factory automation",
-    "link": "https://www.artificialintelligence-news.com/news/abb-physical-ai-simulation-secures-factory-automation-roi/"
-  },
-  {
-    "title": "Agentic AI in finance speeds up operational automation",
-    "link": "https://www.artificialintelligence-news.com/news/agentic-ai-in-finance-speeds-up-operational-automation/"
   }
 ]
