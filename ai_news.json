@@ -1,5 +1,13 @@
 [
   {
+    "title": "Automating complex finance workflows with multimodal AI",
+    "link": "https://www.artificialintelligence-news.com/news/automating-complex-finance-workflows-with-multimodal-ai/"
+  },
+  {
+    "title": "Securing AI systems under today’s and tomorrow’s conditions",
+    "link": "https://www.artificialintelligence-news.com/news/quantum-resilient-ai-needs-migration-and-hardware-protected-data-enclaves/"
+  },
+  {
     "title": "Palantir AI to support UK finance operations",
     "link": "https://www.artificialintelligence-news.com/news/palantir-ai-to-support-uk-finance-operations/"
   },
@@ -30,13 +38,5 @@
   {
     "title": "US Treasury publishes AI risk Guidebook for financial institutions",
     "link": "https://www.artificialintelligence-news.com/news/us-treasury-publishes-ai-risk-governance-guidebook-for-financial-institutions/"
-  },
-  {
-    "title": "NTT DATA and NVIDIA bring enterprise AI factories to production scale",
-    "link": "https://www.artificialintelligence-news.com/news/ntt-data-nvidia-enterprise-ai-factories-production/"
-  },
-  {
-    "title": "OpenAI’s Frontier puts AI agents in a fight SaaS can’t afford to lose",
-    "link": "https://www.artificialintelligence-news.com/news/openai-frontier-enterprise-ai-agents-saas/"
   }
 ]
