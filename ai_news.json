@@ -1,5 +1,17 @@
 [
   {
+    "title": "The billion-dollar startup with a different idea for AI",
+    "link": "https://www.artificialintelligence-news.com/news/the-billion-dollar-startup-with-a-different-idea-for-ai-ami-labs-yann-lecun/"
+  },
+  {
+    "title": "NVIDIA and Google infrastructure cuts AI inference costs",
+    "link": "https://www.artificialintelligence-news.com/news/nvidia-and-google-infrastructure-cuts-ai-inference-costs/"
+  },
+  {
+    "title": "Sony AI robot beats players as humanoid robot wins Beijing race",
+    "link": "https://www.artificialintelligence-news.com/news/sony-ai-robot-table-tennis-humanoid-robot-beijing-race/"
+  },
+  {
     "title": "Reversing enterprise security costs with AI vulnerability discovery",
     "link": "https://www.artificialintelligence-news.com/news/reversing-enterprise-security-costs-with-ai-vulnerability-discovery/"
   },
@@ -26,17 +38,5 @@
   {
     "title": "How to prepare for and remediate an AI system incident",
     "link": "https://www.artificialintelligence-news.com/news/how-to-prepare-for-and-remediate-an-ai-system-incident/"
-  },
-  {
-    "title": "Anthropic walks into the White House and Mythos is the reason Washington let it in",
-    "link": "https://www.artificialintelligence-news.com/news/anthropic-mythos-ai-cybersecurity-white-house/"
-  },
-  {
-    "title": "OpenAI Agents SDK improves governance with sandbox execution",
-    "link": "https://www.artificialintelligence-news.com/news/openai-agents-sdk-improves-governance-sandbox-execution/"
-  },
-  {
-    "title": "Cadence expands AI and robotic partnerships with Nvidia, Google Cloud",
-    "link": "https://www.artificialintelligence-news.com/news/cadence-expands-ai-and-robotics-partnerships-with-nvidia-google-cloud/"
   }
 ]
