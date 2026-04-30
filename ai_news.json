@@ -1,5 +1,13 @@
 [
   {
+    "title": "IDC: How EMEA CIOs can jumpstart AI rollouts",
+    "link": "https://www.artificialintelligence-news.com/news/idc-how-emea-cios-can-jumpstart-ai-rollouts/"
+  },
+  {
+    "title": "GPT-5.5 is OpenAI’s most capable agentic AI model yet",
+    "link": "https://www.artificialintelligence-news.com/news/gpt-5-5-is-openais-most-capable-agentic-ai-model-yet-at-twice-the-api-price/"
+  },
+  {
     "title": "IBM launches AI platform Bob to regulate SDLC costs",
     "link": "https://www.artificialintelligence-news.com/news/ibm-launches-ai-platform-bob-to-regulate-sdlc-costs/"
   },
@@ -30,13 +38,5 @@
   {
     "title": "The billion-dollar startup with a different idea for AI",
     "link": "https://www.artificialintelligence-news.com/news/the-billion-dollar-startup-with-a-different-idea-for-ai-ami-labs-yann-lecun/"
-  },
-  {
-    "title": "NVIDIA and Google infrastructure cuts AI inference costs",
-    "link": "https://www.artificialintelligence-news.com/news/nvidia-and-google-infrastructure-cuts-ai-inference-costs/"
-  },
-  {
-    "title": "Sony AI robot beats players as humanoid robot wins Beijing race",
-    "link": "https://www.artificialintelligence-news.com/news/sony-ai-robot-table-tennis-humanoid-robot-beijing-race/"
   }
 ]
