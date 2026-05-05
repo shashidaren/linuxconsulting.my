@@ -1,5 +1,13 @@
 [
   {
+    "title": "Physical AI raises governance questions for autonomous systems",
+    "link": "https://www.artificialintelligence-news.com/news/physical-ai-governance-autonomous-systems/"
+  },
+  {
+    "title": "Google made agentic AI governance a product. Enterprises still have to catch up.",
+    "link": "https://www.artificialintelligence-news.com/news/agentic-ai-governance-enterprise-readiness-google/"
+  },
+  {
     "title": "SAP: How enterprise AI governance secures profit margins",
     "link": "https://www.artificialintelligence-news.com/news/sap-how-enterprise-ai-governance-secures-profit-margins/"
   },
@@ -30,13 +38,5 @@
   {
     "title": "GPT-5.5 is OpenAI’s most capable agentic AI model yet",
     "link": "https://www.artificialintelligence-news.com/news/gpt-5-5-is-openais-most-capable-agentic-ai-model-yet-at-twice-the-api-price/"
-  },
-  {
-    "title": "IBM launches AI platform Bob to regulate SDLC costs",
-    "link": "https://www.artificialintelligence-news.com/news/ibm-launches-ai-platform-bob-to-regulate-sdlc-costs/"
-  },
-  {
-    "title": "The evolution of encoders: From simple models to multimodal AI",
-    "link": "https://www.artificialintelligence-news.com/news/the-evolution-of-encoders-from-simple-models-to-multimodal-ai/"
   }
 ]
