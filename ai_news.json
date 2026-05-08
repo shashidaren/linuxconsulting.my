@@ -1,5 +1,9 @@
 [
   {
+    "title": "AI helping ease the UK’s NHS burden",
+    "link": "https://www.artificialintelligence-news.com/news/ai-in-the-nhs-helping-ease-doctors-burdens/"
+  },
+  {
     "title": "HP and the art of AI and data for the enterprise",
     "link": "https://www.artificialintelligence-news.com/news/hps-ai-and-data-offerings-for-the-enterprise/"
   },
@@ -34,9 +38,5 @@
   {
     "title": "A guide to APIs, MCPs, and MCP Gateways",
     "link": "https://www.artificialintelligence-news.com/news/a-guide-to-apis-and-mcps-and-mcp-gateways/"
-  },
-  {
-    "title": "AI agent governance takes focus as regulators flag control gaps",
-    "link": "https://www.artificialintelligence-news.com/news/ai-agent-governance-control-gaps/"
   }
 ]
