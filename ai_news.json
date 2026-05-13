@@ -1,5 +1,17 @@
 [
   {
+    "title": "JBS Dev: On imperfect data and the AI last mile – from model capability to cost sustainability",
+    "link": "https://www.artificialintelligence-news.com/news/jbs-dev-on-imperfect-data-and-the-ai-last-mile-from-model-capability-to-cost-sustainability/"
+  },
+  {
+    "title": "Hugging Face hosted malicious software masquerading as OpenAI release",
+    "link": "https://www.artificialintelligence-news.com/news/malware-on-hugging-face-malicious-software-masquerading-as-openai-release/"
+  },
+  {
+    "title": "Laserfiche unveils AI agents for natural language workflows",
+    "link": "https://www.artificialintelligence-news.com/news/laserfiche-ai-agents-act-autonomously-for-the-platforms-users/"
+  },
+  {
     "title": "AI automates HR compliance, except for the area tech companies need",
     "link": "https://www.artificialintelligence-news.com/news/ai-automates-hr-compliance-except-for-the-area-tech-companies-need/"
   },
@@ -26,17 +38,5 @@
   {
     "title": "Google tests Remy AI agent for Gemini as focus turns to user control",
     "link": "https://www.artificialintelligence-news.com/news/google-remy-ai-agent-gemini-user-control/"
-  },
-  {
-    "title": "Physical AI raises governance questions for autonomous systems",
-    "link": "https://www.artificialintelligence-news.com/news/physical-ai-governance-autonomous-systems/"
-  },
-  {
-    "title": "Google made agentic AI governance a product. Enterprises still have to catch up.",
-    "link": "https://www.artificialintelligence-news.com/news/agentic-ai-governance-enterprise-readiness-google/"
-  },
-  {
-    "title": "SAP: How enterprise AI governance secures profit margins",
-    "link": "https://www.artificialintelligence-news.com/news/sap-how-enterprise-ai-governance-secures-profit-margins/"
   }
 ]
