@@ -1,5 +1,13 @@
 [
   {
+    "title": "Enterprise AI roadblocks and roadmaps, security and physical AI: Day two at TechEx",
+    "link": "https://www.artificialintelligence-news.com/news/tech-ex-north-america-day-two-roundup-of-themes-issues-discussions/"
+  },
+  {
+    "title": "The Nvidia H200 China deal survived the Trump-Xi summit–just not in the way anyone expected",
+    "link": "https://www.artificialintelligence-news.com/news/nvidia-h200-china-deal-stalled-trump-xi-summit-2026/"
+  },
+  {
     "title": "AI is a matter of power, infrastructure and security: TechEx North America",
     "link": "https://www.artificialintelligence-news.com/news/techex-north-america-day-one-lessons-for-all-around-ai-and-more/"
   },
@@ -30,13 +38,5 @@
   {
     "title": "Hugging Face hosted malicious software masquerading as OpenAI release",
     "link": "https://www.artificialintelligence-news.com/news/malware-on-hugging-face-malicious-software-masquerading-as-openai-release/"
-  },
-  {
-    "title": "Laserfiche unveils AI agents for natural language workflows",
-    "link": "https://www.artificialintelligence-news.com/news/laserfiche-ai-agents-act-autonomously-for-the-platforms-users/"
-  },
-  {
-    "title": "AI automates HR compliance, except for the area tech companies need",
-    "link": "https://www.artificialintelligence-news.com/news/ai-automates-hr-compliance-except-for-the-area-tech-companies-need/"
   }
 ]
