@@ -1,5 +1,9 @@
 [
   {
+    "title": "Alibaba is designing AI chips around agents, and that changes what the race is actually about",
+    "link": "https://www.artificialintelligence-news.com/news/alibaba-zhenwu-m890-ai-agent-chip-roadmap/"
+  },
+  {
     "title": "Enterprise AI roadblocks and roadmaps, security and physical AI: Day two at TechEx",
     "link": "https://www.artificialintelligence-news.com/news/tech-ex-north-america-day-two-roundup-of-themes-issues-discussions/"
   },
@@ -34,9 +38,5 @@
   {
     "title": "JBS Dev: On imperfect data and the AI last mile – from model capability to cost sustainability",
     "link": "https://www.artificialintelligence-news.com/news/jbs-dev-on-imperfect-data-and-the-ai-last-mile-from-model-capability-to-cost-sustainability/"
-  },
-  {
-    "title": "Hugging Face hosted malicious software masquerading as OpenAI release",
-    "link": "https://www.artificialintelligence-news.com/news/malware-on-hugging-face-malicious-software-masquerading-as-openai-release/"
   }
 ]
