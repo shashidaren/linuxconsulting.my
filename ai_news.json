@@ -1,5 +1,21 @@
 [
   {
+    "title": "Insurers pivot AI strategy toward core risk underwriting",
+    "link": "https://www.artificialintelligence-news.com/news/insurers-pivot-ai-strategy-toward-core-risk-underwriting/"
+  },
+  {
+    "title": "EU publishes its AI content labelling playbook ahead of the AI Act’s August deadline",
+    "link": "https://www.artificialintelligence-news.com/news/ai-content-labelling-eu-code-of-practice/"
+  },
+  {
+    "title": "AI Red Teaming Explained: What It Is and Why You Need It",
+    "link": "https://www.artificialintelligence-news.com/news/ai-red-teaming-explained-what-it-is-and-why-you-need-it/"
+  },
+  {
+    "title": "How AI-Powered CMS Platforms Are Transforming Enterprise Content Operations",
+    "link": "https://www.artificialintelligence-news.com/news/how-ai-powered-cms-platforms-are-transforming-enterprise-content-operations/"
+  },
+  {
     "title": "HarmonyOS 7 steps into the AI gap Apple left open in China",
     "link": "https://www.artificialintelligence-news.com/news/harmonyos-7-china-ai-apple-gap/"
   },
@@ -22,21 +38,5 @@
   {
     "title": "Xebia: Why AI agents fail without the right data foundation",
     "link": "https://www.artificialintelligence-news.com/news/xebia-on-building-the-data-foundation-for-ai-agents-and-then-accelerating/"
-  },
-  {
-    "title": "Siri AI arrives with Google inside, and much of the world is locked out",
-    "link": "https://www.artificialintelligence-news.com/news/siri-ai-google-gemini-rollout/"
-  },
-  {
-    "title": "McDonald’s tests Google-backed AI drive-thru ordering system",
-    "link": "https://www.artificialintelligence-news.com/news/mcdonalds-ai-drive-thru-google-archiq/"
-  },
-  {
-    "title": "How to sign PDFs easily online with a PDF signer",
-    "link": "https://www.artificialintelligence-news.com/news/how-to-sign-pdfs-easily-online-with-a-pdf-signer/"
-  },
-  {
-    "title": "Autonomous AI Data Loss in DevOps: Building Efficient Defenses",
-    "link": "https://www.artificialintelligence-news.com/news/autonomous-ai-data-loss-in-devops/"
   }
 ]
