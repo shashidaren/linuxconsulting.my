@@ -1,5 +1,13 @@
 [
   {
+    "title": "Mitigating vendor lock-in with Sakana AI Fugu multi-agent models",
+    "link": "https://www.artificialintelligence-news.com/news/mitigating-vendor-lock-in-sakana-ai-fugu-multi-agent-models/"
+  },
+  {
+    "title": "L’Oréal brings Maybelline virtual try-on to ChatGPT",
+    "link": "https://www.artificialintelligence-news.com/news/loreal-maybelline-virtual-try-on-chatgpt/"
+  },
+  {
     "title": "SAP and Google Cloud deploy agentic commerce architecture",
     "link": "https://www.artificialintelligence-news.com/news/sap-and-google-cloud-deploy-agentic-commerce-architecture/"
   },
@@ -30,13 +38,5 @@
   {
     "title": "EU publishes its AI content labelling playbook ahead of the AI Act’s August deadline",
     "link": "https://www.artificialintelligence-news.com/news/ai-content-labelling-eu-code-of-practice/"
-  },
-  {
-    "title": "AI Red Teaming Explained: What It Is and Why You Need It",
-    "link": "https://www.artificialintelligence-news.com/news/ai-red-teaming-explained-what-it-is-and-why-you-need-it/"
-  },
-  {
-    "title": "How AI-Powered CMS Platforms Are Transforming Enterprise Content Operations",
-    "link": "https://www.artificialintelligence-news.com/news/how-ai-powered-cms-platforms-are-transforming-enterprise-content-operations/"
   }
 ]
