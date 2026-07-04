@@ -1,5 +1,9 @@
 [
   {
+    "title": "Takeda signs US$600M AI drug discovery deal with Insilico",
+    "link": "https://www.artificialintelligence-news.com/news/takeda-insilico-ai-drug-discovery-deal/"
+  },
+  {
     "title": "NVIDIA BioNeMo accelerates Anthropic Claude Science",
     "link": "https://www.artificialintelligence-news.com/news/nvidia-bionemo-accelerates-anthropic-claude-science/"
   },
@@ -34,9 +38,5 @@
   {
     "title": "Best Automated Security Testing Tools for Modern DevSecOps",
     "link": "https://www.artificialintelligence-news.com/news/best-automated-security-testing-tools-for-modern-devsecops/"
-  },
-  {
-    "title": "xFusion scales enterprise AI from edge workstations to liquid-cooled data centres",
-    "link": "https://www.artificialintelligence-news.com/news/xfusion-scales-enterprise-ai-from-edge-workstations-to-liquid-cooled-data-centres/"
   }
 ]
