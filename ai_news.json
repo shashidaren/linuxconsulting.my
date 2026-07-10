@@ -1,5 +1,13 @@
 [
   {
+    "title": "AWS GraphRAG deployment cuts drug research cycles by 87%",
+    "link": "https://www.artificialintelligence-news.com/news/aws-graphrag-deployment-cuts-drug-research-cycles-by-87/"
+  },
+  {
+    "title": "NHS AI blood test could reduce invasive womb cancer checks",
+    "link": "https://www.artificialintelligence-news.com/news/nhs-ai-blood-test-womb-cancer-checks/"
+  },
+  {
     "title": "Insilico Medicine advances AI drug for IPF to Phase III trials",
     "link": "https://www.artificialintelligence-news.com/news/insilico-medicine-advances-ai-drug-for-ipf-to-phase-iii-trials/"
   },
@@ -30,13 +38,5 @@
   {
     "title": "Bank of England reviews AI rules for agentic AI in finance",
     "link": "https://www.artificialintelligence-news.com/news/bank-of-england-agentic-ai-finance-rules/"
-  },
-  {
-    "title": "Anthropic deploys Claude Sonnet 5, Fable and Mythos restored",
-    "link": "https://www.artificialintelligence-news.com/news/anthropic-deploys-claude-sonnet-5-fable-and-mythos-restored/"
-  },
-  {
-    "title": "HP accelerates enterprise workflows with OpenAI Frontier",
-    "link": "https://www.artificialintelligence-news.com/news/hp-accelerates-enterprise-workflows-openai-frontier/"
   }
 ]
