@@ -1,5 +1,9 @@
 [
   {
+    "title": "Nokia’s AI-RAN platform: a radio comeback that runs on NVIDIA",
+    "link": "https://www.artificialintelligence-news.com/news/nokia-ai-ran-platform-nvidia/"
+  },
+  {
     "title": "AWS and Bluesight build AI for hospital 340B compliance",
     "link": "https://www.artificialintelligence-news.com/news/aws-and-bluesight-build-ai-for-hospital-340b-compliance/"
   },
@@ -34,9 +38,5 @@
   {
     "title": "Takeda signs $600M AI drug discovery deal with Insilico",
     "link": "https://www.artificialintelligence-news.com/news/takeda-insilico-ai-drug-discovery-deal/"
-  },
-  {
-    "title": "NVIDIA BioNeMo accelerates Anthropic Claude Science",
-    "link": "https://www.artificialintelligence-news.com/news/nvidia-bionemo-accelerates-anthropic-claude-science/"
   }
 ]
