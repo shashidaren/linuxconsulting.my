@@ -1,5 +1,13 @@
 [
   {
+    "title": "US public health agencies to test OpenAI and Anthropic AI models",
+    "link": "https://www.artificialintelligence-news.com/news/openai-anthropic-public-health-ai/"
+  },
+  {
+    "title": "Kimi K3 open-weight model: China’s biggest AI is a bet on memory, not compute",
+    "link": "https://www.artificialintelligence-news.com/news/kimi-k3-open-weight-model-memory-compute-china/"
+  },
+  {
     "title": "Bunkerhill raises $55M to scale agentic AI across health systems",
     "link": "https://www.artificialintelligence-news.com/news/bunkerhill-raises-55m-scale-agentic-ai-health-systems/"
   },
@@ -30,13 +38,5 @@
   {
     "title": "AWS GraphRAG deployment cuts drug research cycles by 87%",
     "link": "https://www.artificialintelligence-news.com/news/aws-graphrag-deployment-cuts-drug-research-cycles-by-87/"
-  },
-  {
-    "title": "NHS AI blood test could reduce invasive womb cancer checks",
-    "link": "https://www.artificialintelligence-news.com/news/nhs-ai-blood-test-womb-cancer-checks/"
-  },
-  {
-    "title": "Insilico Medicine advances AI drug for IPF to Phase III trials",
-    "link": "https://www.artificialintelligence-news.com/news/insilico-medicine-advances-ai-drug-for-ipf-to-phase-iii-trials/"
   }
 ]
