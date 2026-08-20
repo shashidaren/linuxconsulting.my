@@ -1,0 +1,285 @@
+:root {
+    --bg: #f4f6f8;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --accent: #10b981;
+    --accent-strong: #059669;
+    --accent-soft: #ecfdf5;
+    --dark: #0f172a;
+    --shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    --shadow-hover: 0 10px 24px rgba(15, 23, 42, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* ---------- Top strip ---------- */
+.top-strip {
+    background: var(--dark);
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+    text-align: center;
+}
+
+.top-strip a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.top-strip a:hover { color: var(--accent); }
+
+/* ---------- Header ---------- */
+header {
+    background: var(--surface);
+    color: var(--text);
+    padding: 1.75rem 1rem;
+    text-align: center;
+    border-bottom: 3px solid var(--accent);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.9rem;
+    letter-spacing: -0.02em;
+}
+
+header h1 .accent { color: var(--accent-strong); }
+
+header p {
+    margin: 0.4rem 0 0;
+    color: var(--muted);
+}
+
+/* ---------- Navigation ---------- */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: var(--surface);
+    padding: 0.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+nav a {
+    color: var(--text);
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    border-radius: 8px;
+    margin: 0.2rem;
+    font-weight: 500;
+}
+
+nav a:hover {
+    background-color: var(--accent-soft);
+    color: var(--accent-strong);
+}
+
+nav a.active {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    position: relative;
+    text-align: center;
+    color: var(--text);
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0f9ff 55%, #ffffff 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 3.25rem 1rem;
+}
+
+.hero-slider {
+    position: relative;
+    min-height: 130px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.7rem;
+    letter-spacing: -0.02em;
+}
+
+.slide p {
+    margin: 0 auto;
+    max-width: 640px;
+    color: var(--muted);
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.75rem;
+    background-color: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-strong);
+    transform: translateY(-1px);
+}
+
+/* ---------- Main / cards ---------- */
+main {
+    padding: 1.5rem 1rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--surface);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent);
+}
+
+.card-with-image {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 260px;
+    border: none;
+}
+
+.card-with-image:hover { border-color: transparent; }
+
+.card-with-image h2 {
+    margin-top: 0;
+    font-size: 1.35rem;
+}
+
+.card-with-image .more-link {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+    align-self: flex-start;
+}
+
+.card-with-image .more-link:hover {
+    text-decoration-color: #fff;
+}
+
+/* ---------- News list ---------- */
+.news-list-container {
+    background: var(--surface);
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.news-list-container h1 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+}
+
+.news-item {
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+}
+
+.news-item:last-child { border-bottom: none; }
+
+.news-item h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.news-item a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.news-item a:hover {
+    color: var(--accent-strong);
+}
+
+.news-item a::after {
+    content: " \2197";
+    color: var(--accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.news-item a:hover::after { opacity: 1; }
+
+.placeholder {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+}
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    padding: 1.75rem 1rem;
+    background: var(--dark);
+    color: #94a3b8;
+    margin-top: 2rem;
+    font-size: 0.92rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.4);
+}
+
+footer a:hover {
+    text-decoration-color: var(--accent);
+    color: var(--accent);
+}

@@ -3,6 +3,11 @@ import json
 import time
 import os
 
+# The tech news site lives in the tech/ subdirectory (served at /tech/ now,
+# and intended to move to tech.linuxconsulting.my later). JSON feeds are
+# written there so the site keeps working from its new location.
+OUTPUT_DIR = "tech"
+
 # Define RSS feeds for each section
 FEEDS = {
     "news_local.json": [
@@ -50,7 +55,7 @@ def main():
     repo_root = os.getenv('GITHUB_WORKSPACE', '.')
 
     for filename, urls in FEEDS.items():
-        output_path = os.path.join(repo_root, filename)
+        output_path = os.path.join(repo_root, OUTPUT_DIR, filename)
         items = fetch_feed_entries(urls)
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(items, f, ensure_ascii=False, indent=2)
