@@ -211,6 +211,27 @@ main {
     text-decoration-color: #fff;
 }
 
+/* News items on image cards must stay light over the background photo */
+.card-with-image .news-item {
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.card-with-image .news-item a {
+    color: #fff;
+}
+
+.card-with-image .news-item a::after {
+    color: #6ee7b7;
+}
+
+.card-with-image .news-item a:hover {
+    color: #a7f3d0;
+}
+
+.card-with-image .placeholder {
+    color: rgba(255, 255, 255, 0.85);
+}
+
 /* ---------- News list ---------- */
 .news-list-container {
     background: var(--surface);

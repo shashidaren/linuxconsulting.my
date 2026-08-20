@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         config.categories.forEach(cat => {
             const card = document.createElement('div');
             card.className = 'card card-with-image';
-            card.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${cat.image}')`;
+            card.style.backgroundImage = `linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.82) 100%), url('${cat.image}')`;
 
             card.innerHTML = `
                 <div>
