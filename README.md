@@ -10,6 +10,7 @@ sub-sites organised by folder.
 ├── index.html          # Consulting main page with tabbed sections
 ├── scripts.js          # Hash-routed tab navigation (#consulting … #contact)
 ├── styles.css          # Site styles
+├── assets/img/services/# Imagery for the Consulting "Scope of services" cards
 ├── 404.html            # Hub 404 page
 ├── CNAME               # linuxconsulting.my
 ├── tech/               # Tech News MY sub-site
