@@ -1,12 +1,15 @@
 # LinuxConsulting.my
 
-Main site hub for **linuxconsulting.my** (GitHub Pages) with sub-sites organised by folder.
+Consulting-services site for **linuxconsulting.my** (GitHub Pages) with a
+tabbed single-page layout (Consulting · Portfolio · Projects · Contact) and
+sub-sites organised by folder.
 
 ## Structure
 
 ```
-├── index.html          # Main hub page (linuxconsulting.my)
-├── styles.css          # Hub styles
+├── index.html          # Consulting main page with tabbed sections
+├── scripts.js          # Hash-routed tab navigation (#consulting … #contact)
+├── styles.css          # Site styles
 ├── 404.html            # Hub 404 page
 ├── CNAME               # linuxconsulting.my
 ├── tech/               # Tech News MY sub-site
