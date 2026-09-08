@@ -3,56 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinuxConsulting.my — Linux &amp; IT Consulting in Malaysia</title>
-    <meta name="description" content="LinuxConsulting.my — Linux and IT consulting services in Malaysia. Explore our tech news hub and upcoming projects.">
+    <title>LinuxConsulting.my — Linux &amp; IT Consulting Services in Malaysia</title>
+    <meta name="description" content="LinuxConsulting.my — Linux consulting services in Malaysia. Server administration, hardening, automation, cloud migration and ongoing support.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2310b981'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>&gt;_</text></svg>">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-    <div class="hero">
-        <div class="logo-mark"><i class="fa-brands fa-linux"></i></div>
-        <h1>LinuxConsulting<span class="dot">.my</span></h1>
-        <p class="tagline">Linux &amp; IT consulting, proudly based in Malaysia.</p>
-    </div>
 
-    <main>
-        <h2 class="section-title">Our Sites</h2>
-        <section class="cards-grid">
-            <a class="card live" href="tech/">
-                <div class="card-top">
-                    <span class="badge"><i class="fas fa-circle"></i> Live</span>
-                    <i class="fas fa-newspaper card-icon"></i>
-                </div>
-                <h3>Tech News MY</h3>
-                <p>Curated headlines for Malaysia — local tech news, global stories, AI breakthroughs, product releases and IT certifications.</p>
-                <span class="card-link">Visit the hub <i class="fas fa-arrow-right"></i></span>
+    <!-- ============ Header + Tab navigation ============ -->
+    <header class="site-header">
+        <a class="brand" href="#consulting" data-tab-link="consulting">
+            <span class="brand-mark"><i class="fa-brands fa-linux"></i></span>
+            <span class="brand-name">LinuxConsulting<span class="dot">.my</span></span>
+        </a>
+        <nav class="tabs" role="tablist" aria-label="Site sections">
+            <button class="tab active" role="tab" aria-selected="true" data-tab="consulting">
+                <i class="fas fa-briefcase"></i> Consulting
+            </button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="portfolio">
+                <i class="fas fa-user-tie"></i> Portfolio
+            </button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="projects">
+                <i class="fas fa-toolbox"></i> Projects
+            </button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="contact">
+                <i class="fas fa-envelope"></i> Contact
+            </button>
+            <a class="tab tab-external" href="tech/">
+                <i class="fas fa-newspaper"></i> Tech News <i class="fas fa-arrow-up-right-from-square ext-icon"></i>
             </a>
+        </nav>
+    </header>
 
-            <a class="card coming-soon" href="mailto:support@linuxconsulting.my?subject=New%20project%20for%20linuxconsulting.my">
-                <div class="card-top">
-                    <span class="badge muted"><i class="fas fa-hourglass-half"></i> Coming soon</span>
-                    <i class="fas fa-lightbulb card-icon"></i>
-                </div>
-                <h3>Consulting Services</h3>
-                <p>Linux administration, server hardening, automation and IT consulting for Malaysian businesses — details landing soon.</p>
-                <span class="card-link">Tell us what you need <i class="fas fa-arrow-right"></i></span>
-            </a>
+    <!-- ============ TAB: Consulting (main page) ============ -->
+    <section class="tab-panel active" id="panel-consulting" role="tabpanel" aria-label="Consulting services">
 
-            <a class="card coming-soon" href="mailto:support@linuxconsulting.my?subject=New%20project%20for%20linuxconsulting.my">
-                <div class="card-top">
-                    <span class="badge muted"><i class="fas fa-hourglass-half"></i> Coming soon</span>
-                    <i class="fas fa-toolbox card-icon"></i>
+        <div class="hero">
+            <p class="hero-kicker"><i class="fas fa-location-dot"></i> Proudly based in Malaysia</p>
+            <h1>Linux &amp; IT Consulting<br>that keeps your servers <span class="hl">humming</span>.</h1>
+            <p class="hero-sub">
+                From a single VPS to a fleet of production servers — administration, hardening,
+                automation and honest advice for Malaysian businesses, startups and hosting resellers.
+            </p>
+            <div class="hero-cta">
+                <a class="btn btn-primary" href="#contact" data-tab-link="contact">
+                    <i class="fas fa-paper-plane"></i> Get a free consultation
+                </a>
+                <a class="btn btn-ghost" href="#services-list">
+                    <i class="fas fa-list-check"></i> Explore services
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Emergency response</span></div>
+                <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Linux-focused</span></div>
+                <div class="stat"><span class="stat-num">MY</span><span class="stat-label">Local &amp; remote</span></div>
+            </div>
+        </div>
+
+        <main>
+            <h2 class="section-title" id="services-list">Consulting Services</h2>
+            <p class="section-sub">Engage us one-off, per project, or on a monthly retainer.</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-server"></i></div>
+                    <h3>Linux Server Administration</h3>
+                    <p>Setup, patching, performance tuning and day-to-day care of RHEL, Alma, Rocky, Debian and Ubuntu servers — physical, VPS or cloud.</p>
                 </div>
-                <h3>Tools &amp; Projects</h3>
-                <p>Open-source tools, scripts and side projects. This slot is reserved for whatever we build next.</p>
-                <span class="card-link">Suggest an idea <i class="fas fa-arrow-right"></i></span>
-            </a>
-        </section>
-    </main>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>Security &amp; Hardening</h3>
+                    <p>CIS-benchmark hardening, firewall &amp; SELinux configuration, vulnerable-service audits, and incident response when things go wrong.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-gears"></i></div>
+                    <h3>Automation &amp; Scripting</h3>
+                    <p>Bash &amp; Ansible automation, backup pipelines, scheduled maintenance and zero-touch provisioning that removes human error.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Web &amp; Hosting Stacks</h3>
+                    <p>Nginx / Apache, PHP, MySQL / MariaDB, SSL and DNS — tuned hosting stacks for business sites, e-commerce and reseller panels.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cloud-arrow-up"></i></div>
+                    <h3>Cloud &amp; VPS Migration</h3>
+                    <p>Move workloads between hosts or into the cloud with minimal downtime — plus right-sizing so you stop overpaying for compute.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-heart-pulse"></i></div>
+                    <h3>Monitoring &amp; Support Retainers</h3>
+                    <p>Uptime &amp; log monitoring, proactive alerts and a monthly maintenance retainer — your on-call Linux department.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">How engagements work</h2>
+            <div class="process-grid">
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <h3>Discover</h3>
+                    <p>Free 30-minute call to understand your setup, pain points and goals.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <h3>Assess</h3>
+                    <p>We audit your servers and deliver a written plan with fixed pricing.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <h3>Implement</h3>
+                    <p>Work is done in maintenance windows, documented and handed over.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">4</span>
+                    <h3>Support</h3>
+                    <p>Optional retainer keeps everything patched, monitored and backed up.</p>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- ============ TAB: Portfolio ============ -->
+    <!-- TODO: Replace all placeholder content in this panel with details from the owner's resume -->
+    <section class="tab-panel" id="panel-portfolio" role="tabpanel" aria-label="Portfolio">
+        <main>
+            <div class="notice-banner">
+                <i class="fas fa-circle-info"></i>
+                <div>
+                    <strong>Draft layout.</strong> The structure below is ready — the placeholder
+                    content will be replaced with real details from your resume.
+                </div>
+            </div>
+
+            <!-- Profile summary -->
+            <div class="profile-head">
+                <div class="avatar"><i class="fas fa-user"></i></div>
+                <div>
+                    <!-- TODO: name & title from resume -->
+                    <h1 class="profile-name">Your Name</h1>
+                    <p class="profile-title">Senior Linux Consultant · Kuala Lumpur, Malaysia</p>
+                    <p class="profile-summary">
+                        One-paragraph professional summary from the resume goes here — years of
+                        experience, core specialities and the value you bring to clients.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Experience timeline -->
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">20XX — Present</span>
+                        <h3>Role Title — Company Name</h3>
+                        <p class="timeline-loc">City, Malaysia</p>
+                        <ul>
+                            <li>Key achievement or responsibility from the resume…</li>
+                            <li>Quantified result, e.g. “cut server costs 30%”…</li>
+                            <li>Technologies used on the job…</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">20XX — 20XX</span>
+                        <h3>Previous Role — Company Name</h3>
+                        <p class="timeline-loc">City, Malaysia</p>
+                        <ul>
+                            <li>Key achievement or responsibility from the resume…</li>
+                            <li>Quantified result…</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-body">
+                        <span class="timeline-date">20XX — 20XX</span>
+                        <h3>Earlier Role — Company Name</h3>
+                        <p class="timeline-loc">City, Malaysia</p>
+                        <ul>
+                            <li>Key achievement or responsibility from the resume…</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <h2 class="section-title">Skills &amp; Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3><i class="fa-brands fa-linux"></i> Systems</h3>
+                    <div class="chips">
+                        <span class="chip">RHEL / Alma / Rocky</span>
+                        <span class="chip">Debian / Ubuntu</span>
+                        <span class="chip">systemd</span>
+                        <span class="chip">LVM / RAID</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3><i class="fas fa-terminal"></i> Automation</h3>
+                    <div class="chips">
+                        <span class="chip">Bash</span>
+                        <span class="chip">Ansible</span>
+                        <span class="chip">Python</span>
+                        <span class="chip">Git</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3><i class="fas fa-shield-halved"></i> Security</h3>
+                    <div class="chips">
+                        <span class="chip">CIS Hardening</span>
+                        <span class="chip">SELinux</span>
+                        <span class="chip">Firewalls</span>
+                        <span class="chip">SSL / PKI</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3><i class="fas fa-cloud"></i> Cloud &amp; Services</h3>
+                    <div class="chips">
+                        <span class="chip">Nginx / Apache</span>
+                        <span class="chip">MySQL / MariaDB</span>
+                        <span class="chip">Docker</span>
+                        <span class="chip">AWS / VPS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <h2 class="section-title">Certifications &amp; Education</h2>
+            <div class="cert-grid">
+                <!-- TODO: replace with real certs/degrees from resume -->
+                <div class="cert-card">
+                    <i class="fas fa-certificate cert-icon"></i>
+                    <div>
+                        <h3>Certification Name</h3>
+                        <p>Issuing body · Year</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <i class="fas fa-graduation-cap cert-icon"></i>
+                    <div>
+                        <h3>Degree / Qualification</h3>
+                        <p>Institution · Year</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- ============ TAB: Projects ============ -->
+    <section class="tab-panel" id="panel-projects" role="tabpanel" aria-label="Projects">
+        <main>
+            <h2 class="section-title">Projects &amp; Tools</h2>
+            <p class="section-sub">Things we build and run in public.</p>
+            <div class="cards-grid">
+                <a class="card live" href="tech/">
+                    <div class="card-top">
+                        <span class="badge"><i class="fas fa-circle"></i> Live</span>
+                        <i class="fas fa-newspaper card-icon"></i>
+                    </div>
+                    <h3>Tech News MY</h3>
+                    <p>Curated headlines for Malaysia — local tech news, global stories, AI breakthroughs, product releases and IT certifications.</p>
+                    <span class="card-link">Visit the hub <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <div class="card coming-soon">
+                    <div class="card-top">
+                        <span class="badge muted"><i class="fas fa-hourglass-half"></i> Coming soon</span>
+                        <i class="fas fa-screwdriver-wrench card-icon"></i>
+                    </div>
+                    <h3>Open-source Tools</h3>
+                    <p>Scripts and utilities born from real consulting work — this slot is reserved for whatever we release next.</p>
+                    <span class="card-link">Watch this space</span>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- ============ TAB: Contact ============ -->
+    <section class="tab-panel" id="panel-contact" role="tabpanel" aria-label="Contact">
+        <main>
+            <h2 class="section-title">Let's talk about your servers</h2>
+            <p class="section-sub">Tell us what's hurting — we'll reply within one business day.</p>
+            <div class="contact-grid">
+                <a class="contact-card" href="mailto:support@linuxconsulting.my?subject=Consulting%20enquiry%20—%20linuxconsulting.my">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <h3>Email us</h3>
+                    <p>support@linuxconsulting.my</p>
+                    <span class="card-link">Start an enquiry <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <div class="contact-card">
+                    <i class="fas fa-map-location-dot contact-icon"></i>
+                    <h3>Where we work</h3>
+                    <p>Based in Malaysia — on-site in the Klang Valley, remote everywhere else.</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-clock contact-icon"></i>
+                    <h3>Availability</h3>
+                    <p>Business hours for consultations; 24/7 emergency response for retainer clients.</p>
+                </div>
+            </div>
+
+            <div class="cta-strip">
+                <h2>Not sure what you need yet?</h2>
+                <p>Book the free 30-minute discovery call — no sales pitch, just an honest read of your setup.</p>
+                <a class="btn btn-primary" href="mailto:support@linuxconsulting.my?subject=Free%20discovery%20call">
+                    <i class="fas fa-calendar-check"></i> Book the call
+                </a>
+            </div>
+        </main>
+    </section>
 
     <footer>
         <p>&copy; 2026 LinuxConsulting.my. All rights reserved. | <a href="mailto:support@linuxconsulting.my"><i class="fas fa-envelope"></i> support@linuxconsulting.my</a></p>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
