@@ -412,7 +412,7 @@ main {
 .also-item {
     display: flex;
     gap: 1rem;
-    align-items: flex-start;
+    align-items: center;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 14px;
@@ -422,15 +422,50 @@ main {
 
 .also-icon {
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background: var(--accent-soft);
-    color: var(--accent-strong);
+    width: 84px;
+    height: 84px;
+    border-radius: 12px;
+    background: linear-gradient(160deg, #0f172a 0%, #134e4a 100%);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    color: #34d399;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.05rem;
+    font-size: 1.5rem;
+}
+
+.also-media {
+    position: relative;
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--dark);
+}
+
+.also-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.also-badge {
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
 }
 
 .also-item h3 { margin: 0 0 0.25rem; font-size: 0.98rem; }
