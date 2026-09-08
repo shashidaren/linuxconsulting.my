@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LinuxConsulting.my — Linux &amp; IT Consulting Services in Malaysia</title>
-    <meta name="description" content="LinuxConsulting.my — Linux infrastructure and automation consulting in Malaysia by Shashidaren, Senior Infrastructure & Automation Engineer. Server administration, monitoring, automation and 24/7 support.">
+    <meta name="description" content="LinuxConsulting.my — managed Linux server administration, monitoring, automation, security hardening, backups & DR, virtualisation, cloud migration, containers, mail/DNS and database services in Malaysia, delivered by a senior Linux engineer.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2310b981'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>&gt;_</text></svg>">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -62,40 +62,329 @@
         </div>
 
         <main>
-            <h2 class="section-title" id="services-list">Consulting Services</h2>
-            <p class="section-sub">Engage us one-off, per project, or on a monthly retainer.</p>
+            <!-- Scope banner -->
+            <div class="scope-band">
+                <div class="scope-band-inner">
+                    <h2 class="section-title" id="services-list">Scope of services</h2>
+                    <p class="scope-band-sub">
+                        Everything below is delivered hands-on by one senior engineer — no junior hand-offs,
+                        no ticket queues. Take a single project, or hand over the whole stack.
+                    </p>
+                </div>
+            </div>
 
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-server"></i></div>
-                    <h3>Linux Server Administration</h3>
-                    <p>Setup, patching, performance tuning and day-to-day care of Red Hat, Debian and Ubuntu servers — physical, virtual or cloud, from one box to hundreds.</p>
+                <article class="svc-card">
+                    <div class="svc-media">
+                        <img src="assets/img/services/managed-administration.jpg" width="900" height="502" loading="lazy"
+                             alt="Rack-mounted Linux servers with green status LEDs in a tidy data centre aisle">
+                        <span class="svc-icon"><i class="fas fa-server"></i></span>
+                    </div>
+                    <div class="svc-body">
+                        <h3>Managed Linux Server Administration</h3>
+                        <p>Day-to-day ownership of Red Hat, Rocky, Debian and Ubuntu fleets — physical, virtual or cloud — from a single box to hundreds.</p>
+                        <ul class="svc-includes">
+                            <li><i class="fas fa-check"></i> Patching, kernel &amp; OS upgrades in safe windows</li>
+                            <li><i class="fas fa-check"></i> Accounts, sudo policy &amp; access reviews</li>
+                            <li><i class="fas fa-check"></i> Performance tuning &amp; capacity planning</li>
+                            <li><i class="fas fa-check"></i> Monthly health report in plain language</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="svc-card">
+                    <div class="svc-media">
+                        <img src="assets/img/services/monitoring-alerting.jpg" width="900" height="502" loading="lazy"
+                             alt="Dark network operations centre with a wall of monitoring dashboards glowing green">
+                        <span class="svc-icon"><i class="fas fa-heart-pulse"></i></span>
+                    </div>
+                    <div class="svc-body">
+                        <h3>Monitoring, Alerting &amp; Incident Response</h3>
+                        <p>Monitoring that pages a human before your customers notice — built, tuned and actually maintained, not installed and abandoned.</p>
+                        <ul class="svc-includes">
+                            <li><i class="fas fa-check"></i> Prometheus/Grafana, Zabbix, Nagios or GroundWork builds</li>
+                            <li><i class="fas fa-check"></i> Alert tuning that kills notification noise</li>
+                            <li><i class="fas fa-check"></i> On-call escalation &amp; root-cause write-ups</li>
+                            <li><i class="fas fa-check"></i> Uptime, SLA &amp; downtime reporting</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="svc-card">
+                    <div class="svc-media">
+                        <img src="assets/img/services/automation-config-mgmt.jpg" width="900" height="502" loading="lazy"
+                             alt="Engineer's hands on a keyboard beside a laptop showing a terminal in a dim server room">
+                        <span class="svc-icon"><i class="fas fa-gears"></i></span>
+                    </div>
+                    <div class="svc-body">
+                        <h3>Automation &amp; Configuration Management</h3>
+                        <p>Ansible, Bash and Python that turn recurring manual work — audits, reports, builds, validations — into push-button, auditable workflows.</p>
+                        <ul class="svc-includes">
+                            <li><i class="fas fa-check"></i> Ansible playbooks, roles &amp; inventories</li>
+                            <li><i class="fas fa-check"></i> Git-managed server configuration</li>
+                            <li><i class="fas fa-check"></i> Scheduled audits, reports &amp; validations</li>
+                            <li><i class="fas fa-check"></i> CI/CD for infrastructure changes</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="svc-card">
+                    <div class="svc-media">
+                        <img src="assets/img/services/security-hardening.jpg" width="900" height="502" loading="lazy"
+                             alt="Metal padlock resting on a dark server motherboard lit in green">
+                        <span class="svc-icon"><i class="fas fa-shield-halved"></i></span>
+                    </div>
+                    <div class="svc-body">
+                        <h3>Security Hardening &amp; Compliance</h3>
+                        <p>Practical hardening aligned to CIS benchmarks — plus the evidence trail your auditors and customers ask for.</p>
+                        <ul class="svc-includes">
+                            <li><i class="fas fa-check"></i> SSH, TLS &amp; firewall hardening baselines</li>
+                            <li><i class="fas fa-check"></i> Vulnerability scanning &amp; patch management</li>
+                            <li><i class="fas fa-check"></i> Log retention for PDPA / MCMC obligations</li>
+                            <li><i class="fas fa-check"></i> TLS certificate lifecycle management</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="svc-card">
+                    <div class="svc-media">
+                        <img src="assets/img/services/backup-disaster-recovery.jpg" width="900" height="502" loading="lazy"
+                             alt="Rack shelf of hot-swap backup drive bays with green activity LEDs">
+                        <span class="svc-icon"><i class="fas fa-clock-rotate-left"></i></span>
+                    </div>
+                    <div class="svc-body">
+                        <h3>Backup, Disaster Recovery &amp; Continuity</h3>
+                        <p>Backups you can prove work — with tested restores and written runbooks, not nightly jobs nobody ever checks.</p>
+                        <ul class="svc-includes">
+                            <li><i class="fas fa-check"></i> 3-2-1 strategy: restic / Borg / rsync / off-site</li>
+                            <li><i class="fas fa-check"></i> Automated restore testing &amp; drills</li>
+                            <li><i class="fas fa-check"></i> Documented DR plans with RTO / RPO targets</li>
+                            <li><i class="fas fa-check"></i> Ransomware-aware immutable copies</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="svc-card">
+                    <div class="svc-media">
+                        <img src="assets/img/services/virtualisation-private-cloud.jpg" width="900" height="502" loading="lazy"
+                             alt="Physical rack server with translucent glowing cubes representing virtual machines floating above it">
+                        <span class="svc-icon"><i class="fas fa-layer-group"></i></span>
+                    </div>
+                    <div class="svc-body">
+                        <h3>Virtualisation &amp; Private Cloud</h3>
+                        <p>VMware, Proxmox and KVM environments designed for high availability — including escapes from licence price shocks.</p>
+                        <ul class="svc-includes">
+                            <li><i class="fas fa-check"></i> vSphere / Proxmox VE builds &amp; tuning</li>
+                            <li><i class="fas fa-check"></i> VMware &rarr; Proxmox migration planning</li>
+                            <li><i class="fas fa-check"></i> HA clusters &amp; live migration</li>
+                            <li><i class="fas fa-check"></i> ZFS / Ceph storage design</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="svc-card">
+                    <div class="svc-media">
+                        <img src="assets/img/services/cloud-migration.jpg" width="900" height="502" loading="lazy"
+                             alt="Server rack in a dark data centre with an illuminated cloud above, connected by a streak of green light">
+                        <span class="svc-icon"><i class="fas fa-cloud-arrow-up"></i></span>
+                    </div>
+                    <div class="svc-body">
+                        <h3>Cloud Migration &amp; Cost Optimisation</h3>
+                        <p>Move workloads to AWS, GCP or Azure — or back on-prem — without surprises, and keep the monthly bill honest.</p>
+                        <ul class="svc-includes">
+                            <li><i class="fas fa-check"></i> Migration assessment &amp; wave planning</li>
+                            <li><i class="fas fa-check"></i> Lift-and-shift or re-platform execution</li>
+                            <li><i class="fas fa-check"></i> Hybrid VPN, DNS &amp; cutover management</li>
+                            <li><i class="fas fa-check"></i> Rightsizing &amp; cloud cost reviews</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="svc-card">
+                    <div class="svc-media">
+                        <img src="assets/img/services/containers-kubernetes.jpg" width="900" height="502" loading="lazy"
+                             alt="Stacked shipping containers at a quiet port at dusk, used as a container-orchestration metaphor">
+                        <span class="svc-icon"><i class="fas fa-boxes-stacked"></i></span>
+                    </div>
+                    <div class="svc-body">
+                        <h3>Containers, Kubernetes &amp; CI/CD</h3>
+                        <p>Right-sized container platforms — from a single-node K3s to a proper HA cluster — wired into delivery pipelines.</p>
+                        <ul class="svc-includes">
+                            <li><i class="fas fa-check"></i> Docker &amp; K3s / Kubernetes builds</li>
+                            <li><i class="fas fa-check"></i> Helm &amp; GitOps delivery (Argo CD)</li>
+                            <li><i class="fas fa-check"></i> Private registries &amp; image scanning</li>
+                            <li><i class="fas fa-check"></i> Jenkins / GitLab CI pipeline design</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="svc-card">
+                    <div class="svc-media">
+                        <img src="assets/img/services/web-mail-dns-lb.jpg" width="900" height="502" loading="lazy"
+                             alt="Network switch patch panel with fibre optic cables glowing green inside a dark rack">
+                        <span class="svc-icon"><i class="fas fa-globe"></i></span>
+                    </div>
+                    <div class="svc-body">
+                        <h3>Web, Mail, DNS &amp; Load Balancing</h3>
+                        <p>The front door of your business: fast web servers, mail that reaches inboxes, and DNS that never lies.</p>
+                        <ul class="svc-includes">
+                            <li><i class="fas fa-check"></i> Nginx / Apache / HAProxy tuning</li>
+                            <li><i class="fas fa-check"></i> Postfix / Dovecot, SPF, DKIM &amp; DMARC</li>
+                            <li><i class="fas fa-check"></i> BIND / dnsmasq &amp; split-horizon DNS</li>
+                            <li><i class="fas fa-check"></i> Keepalived / IPVS high-availability VIPs</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="svc-card">
+                    <div class="svc-media">
+                        <img src="assets/img/services/database-administration.jpg" width="900" height="502" loading="lazy"
+                             alt="Translucent glowing glass cylinders representing a managed database in a dark room">
+                        <span class="svc-icon"><i class="fas fa-database"></i></span>
+                    </div>
+                    <div class="svc-body">
+                        <h3>Database Administration</h3>
+                        <p>MySQL, MariaDB and PostgreSQL kept fast, replicated and restorable — the unglamorous work that keeps apps alive.</p>
+                        <ul class="svc-includes">
+                            <li><i class="fas fa-check"></i> Replication &amp; HA (Galera, streaming)</li>
+                            <li><i class="fas fa-check"></i> Query, index &amp; configuration tuning</li>
+                            <li><i class="fas fa-check"></i> Backups &amp; point-in-time recovery</li>
+                            <li><i class="fas fa-check"></i> Major-version upgrades with minimal downtime</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <h2 class="section-title">Also in scope</h2>
+            <p class="section-sub">Smaller engagements and specialist work taken on regularly.</p>
+            <div class="also-grid">
+                <div class="also-item">
+                    <span class="also-media">
+                        <img src="assets/img/services/emergency-rescue.jpg" width="84" height="84" loading="lazy"
+                             alt="Server rack showing a single red fault light among calm green racks">
+                        <span class="also-badge"><i class="fas fa-life-ring"></i></span>
+                    </span>
+                    <div>
+                        <h3>Emergency troubleshooting &amp; rescue</h3>
+                        <p>Unbootable boxes, degraded RAID arrays, compromised servers, disks full at 2 a.m. — triage first, fix second, root-cause report after.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-gears"></i></div>
-                    <h3>Automation &amp; Scripting</h3>
-                    <p>Bash, Python, Ansible and PowerCLI automation that turns recurring manual work — audits, reports, validations — into push-button workflows.</p>
+                <div class="also-item">
+                    <span class="also-media">
+                        <img src="assets/img/services/self-hosted-platforms.jpg" width="84" height="84" loading="lazy"
+                             alt="Compact home-lab desk with a small server, four-bay NAS and single-board computer">
+                        <span class="also-badge"><i class="fas fa-cubes"></i></span>
+                    </span>
+                    <div>
+                        <h3>Self-hosted open source platforms</h3>
+                        <p>Nextcloud, GitLab, Mattermost, Wiki.js, Vault, Matrix — replace per-user SaaS licences with hardware you own and control.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-heart-pulse"></i></div>
-                    <h3>Monitoring &amp; Observability</h3>
-                    <p>GroundWork, Zabbix, Nagios or Prometheus/Grafana stacks with alerting that catches silent failures before your customers do.</p>
+                <div class="also-item">
+                    <span class="also-icon"><i class="fas fa-hard-drive"></i></span>
+                    <div>
+                        <h3>Storage &amp; file services</h3>
+                        <p>NFS / Samba shares, AD-integrated home directories, ZFS pools, quotas, snapshots and long-term archiving.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
-                    <h3>Security &amp; Compliance</h3>
-                    <p>Hardening, TLS/SSL certificate lifecycle management, LDAP compliance reporting and threat-intelligence workflows for mail and authentication gateways.</p>
+                <div class="also-item">
+                    <span class="also-icon"><i class="fas fa-network-wired"></i></span>
+                    <div>
+                        <h3>VPN &amp; remote access</h3>
+                        <p>WireGuard / OpenVPN for staff, site-to-site links between offices, RADIUS with 2FA, and sane VLAN segmentation.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-truck-ramp-box"></i></div>
-                    <h3>Deployment &amp; Provisioning</h3>
-                    <p>PXE, Foreman and Ansible-based provisioning that builds servers consistently at scale — proven on rollouts of 2,000+ remote appliances.</p>
+                <div class="also-item">
+                    <span class="also-icon"><i class="fas fa-user-shield"></i></span>
+                    <div>
+                        <h3>Identity &amp; directory services</h3>
+                        <p>OpenLDAP / FreeIPA builds, Active Directory integration, SSO and sudo policy that survives an audit.</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-cloud-arrow-up"></i></div>
-                    <h3>Assessment &amp; Migration</h3>
-                    <p>Infrastructure and email-security assessments (Google Workspace, Microsoft 365, Mimecast), plus VMware / Proxmox / AWS migration planning.</p>
+                <div class="also-item">
+                    <span class="also-icon"><i class="fas fa-gauge-high"></i></span>
+                    <div>
+                        <h3>Performance &amp; capacity planning</h3>
+                        <p>Bottleneck hunts, kernel and service tuning, and growth forecasts with numbers a CFO can actually read.</p>
+                    </div>
                 </div>
+                <div class="also-item">
+                    <span class="also-icon"><i class="fas fa-chalkboard-user"></i></span>
+                    <div>
+                        <h3>Documentation, runbooks &amp; training</h3>
+                        <p>As-built docs, recovery runbooks and mentoring — so your team is never held hostage by any consultant, including this one.</p>
+                    </div>
+                </div>
+                <div class="also-item">
+                    <span class="also-media">
+                        <img src="assets/img/services/advisory-reviews.jpg" width="84" height="84" loading="lazy"
+                             alt="Desk from above with a printed network architecture diagram under a green lamp">
+                        <span class="also-badge"><i class="fas fa-compass-drafting"></i></span>
+                    </span>
+                    <div>
+                        <h3>Architecture reviews &amp; second opinions</h3>
+                        <p>A vendor-neutral read of your setup before you sign a quote, renew a licence or trust a migration plan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Ways to engage</h2>
+            <p class="section-sub">Four engagement models — mix them as your business needs.</p>
+            <div class="engage-grid">
+                <div class="engage-card">
+                    <div class="engage-head"><i class="fas fa-diagram-project"></i><h3>Fixed-scope project</h3></div>
+                    <p>A defined outcome at a fixed price: a migration, a new build, a hardening pass, a monitoring rollout. Scoped in writing after an assessment, delivered in maintenance windows.</p>
+                    <ul class="svc-includes">
+                        <li><i class="fas fa-check"></i> Written scope &amp; fixed quote</li>
+                        <li><i class="fas fa-check"></i> Documented handover</li>
+                    </ul>
+                    <span class="engage-best"><i class="fas fa-bullseye"></i> Best for: migrations, new builds, one-off clean-ups</span>
+                </div>
+                <div class="engage-card">
+                    <div class="engage-head"><i class="fas fa-hand-holding-medical"></i><h3>Monthly retainer</h3></div>
+                    <p>Your outsourced Linux team: proactive patching, monitoring and alerting, verified backups, agreed response times and a monthly health report.</p>
+                    <ul class="svc-includes">
+                        <li><i class="fas fa-check"></i> Agreed response SLAs</li>
+                        <li><i class="fas fa-check"></i> 24/7 emergency line for critical incidents</li>
+                    </ul>
+                    <span class="engage-best"><i class="fas fa-bullseye"></i> Best for: businesses with no in-house ops team</span>
+                </div>
+                <div class="engage-card">
+                    <div class="engage-head"><i class="fas fa-triangle-exclamation"></i><h3>Emergency &amp; break-fix</h3></div>
+                    <p>Server down, site compromised, RAID degraded? Immediate triage, stabilisation and recovery, followed by a plain-English root-cause report.</p>
+                    <ul class="svc-includes">
+                        <li><i class="fas fa-check"></i> Hourly, with a one-hour minimum</li>
+                        <li><i class="fas fa-check"></i> Retainer clients jump the queue</li>
+                    </ul>
+                    <span class="engage-best"><i class="fas fa-bullseye"></i> Best for: urgent incidents on unmanaged servers</span>
+                </div>
+                <div class="engage-card">
+                    <div class="engage-head"><i class="fas fa-comments"></i><h3>Advisory &amp; fractional sysadmin</h3></div>
+                    <p>Senior judgement on tap: architecture reviews, vendor and licence comparisons, second opinions, and mentoring for your junior administrator.</p>
+                    <ul class="svc-includes">
+                        <li><i class="fas fa-check"></i> Booked in blocks of hours</li>
+                        <li><i class="fas fa-check"></i> Written recommendations included</li>
+                    </ul>
+                    <span class="engage-best"><i class="fas fa-bullseye"></i> Best for: teams needing experience, not extra hands</span>
+                </div>
+            </div>
+
+            <h2 class="section-title">Platforms we run</h2>
+            <div class="lab-strip">
+                <span class="chip"><i class="fa-brands fa-linux"></i> Red Hat / Rocky / Alma</span>
+                <span class="chip"><i class="fa-brands fa-linux"></i> Debian / Ubuntu</span>
+                <span class="chip"><i class="fas fa-layer-group"></i> VMware vSphere / Proxmox / KVM</span>
+                <span class="chip"><i class="fas fa-cloud"></i> AWS / GCP / Azure</span>
+                <span class="chip"><i class="fas fa-boxes-stacked"></i> Docker / Kubernetes / K3s</span>
+                <span class="chip"><i class="fas fa-gears"></i> Ansible / Bash / Python</span>
+                <span class="chip"><i class="fas fa-code-branch"></i> Git / Jenkins / GitLab CI</span>
+                <span class="chip"><i class="fas fa-globe"></i> Nginx / Apache / HAProxy</span>
+                <span class="chip"><i class="fas fa-envelope"></i> Postfix / Dovecot</span>
+                <span class="chip"><i class="fas fa-database"></i> MySQL / MariaDB / PostgreSQL</span>
+                <span class="chip"><i class="fas fa-hard-drive"></i> ZFS / Ceph / NFS / Samba</span>
+                <span class="chip"><i class="fas fa-heart-pulse"></i> Prometheus / Grafana / Zabbix / Nagios</span>
+                <span class="chip"><i class="fas fa-network-wired"></i> WireGuard / OpenVPN</span>
+                <span class="chip"><i class="fas fa-user-shield"></i> OpenLDAP / FreeIPA / Active Directory</span>
             </div>
 
             <h2 class="section-title">How engagements work</h2>

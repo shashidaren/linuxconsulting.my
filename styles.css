@@ -270,6 +270,250 @@ main {
 
 .service-card p { margin: 0; color: var(--muted); font-size: 0.93rem; }
 
+/* ---------- Scope banner ---------- */
+.scope-band {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--dark) url("assets/img/services/scope-banner.jpg") center / cover no-repeat;
+    min-height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.75rem 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.75rem;
+}
+
+.scope-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.85) 100%);
+}
+
+.scope-band-inner { position: relative; max-width: 760px; }
+
+.scope-band .section-title {
+    color: #fff;
+    margin: 0;
+    font-size: clamp(1.5rem, 3.4vw, 1.9rem);
+}
+
+.scope-band-sub {
+    margin: 0.6rem auto 0;
+    color: #cbd5e1;
+    font-size: 0.96rem;
+}
+
+/* ---------- Service cards with imagery ---------- */
+.services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.svc-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.svc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent);
+}
+
+.svc-media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--dark);
+}
+
+.svc-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.svc-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 40%, rgba(15, 23, 42, 0.55) 100%);
+}
+
+.svc-icon {
+    position: absolute;
+    left: 1.1rem;
+    bottom: -21px;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--accent);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 14px rgba(16, 185, 129, 0.4);
+}
+
+.svc-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 2.1rem 1.4rem 1.5rem;
+}
+
+.svc-body h3 { margin: 0 0 0.5rem; font-size: 1.06rem; }
+
+.svc-body p { margin: 0 0 0.9rem; color: var(--muted); font-size: 0.92rem; }
+
+.svc-includes {
+    list-style: none;
+    margin: auto 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.svc-includes li {
+    position: relative;
+    padding-left: 1.35rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.svc-includes li i {
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    color: var(--accent-strong);
+    font-size: 0.76rem;
+}
+
+/* ---------- Also in scope ---------- */
+.also-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+}
+
+.also-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.15rem 1.25rem;
+    box-shadow: var(--shadow);
+}
+
+.also-icon {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    border-radius: 12px;
+    background: linear-gradient(160deg, #0f172a 0%, #134e4a 100%);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    color: #34d399;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.also-media {
+    position: relative;
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--dark);
+}
+
+.also-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.also-badge {
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+}
+
+.also-item h3 { margin: 0 0 0.25rem; font-size: 0.98rem; }
+
+.also-item p { margin: 0; color: var(--muted); font-size: 0.88rem; }
+
+/* ---------- Engagement models ---------- */
+.engage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+}
+
+.engage-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 14px;
+    padding: 1.4rem;
+    box-shadow: var(--shadow);
+}
+
+.engage-head {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.6rem;
+}
+
+.engage-head i { color: var(--accent-strong); font-size: 1.15rem; }
+
+.engage-head h3 { margin: 0; font-size: 1.02rem; }
+
+.engage-card > p { margin: 0 0 0.9rem; color: var(--muted); font-size: 0.9rem; }
+
+.engage-best {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px dashed var(--border);
+    color: var(--text);
+    font-size: 0.83rem;
+    font-weight: 600;
+}
+
+.engage-best i { color: var(--accent-strong); margin-right: 0.35rem; }
+
 /* ---------- Process ---------- */
 .process-grid {
     display: grid;
@@ -690,4 +934,6 @@ footer a:hover { color: #34d399; }
     .hero-stats { gap: 1.75rem; }
     .profile-head { flex-direction: column; align-items: center; text-align: center; }
     .profile-links { justify-content: center; }
+    .scope-band { min-height: 200px; padding: 2.25rem 1rem; }
+    .svc-body { padding-top: 2rem; }
 }
