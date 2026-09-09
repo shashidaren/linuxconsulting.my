@@ -13,16 +13,45 @@
         panels[name] = document.getElementById('panel-' + name);
     });
 
+    function prefersReducedMotion() {
+        return !!(window.matchMedia &&
+                  window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    }
+
+    /* On narrow screens the tab bar is a single sideways-scrolling strip, so a
+       tab activated from a hash link (#contact) or the back button can be
+       sitting off-screen. Slide it into view within the strip only — never
+       touch the page's own scroll position. */
+    function revealTab(btn) {
+        if (!btn) { return; }
+        var strip = btn.parentNode;
+        if (!strip || typeof strip.scrollTo !== 'function') { return; }
+        if (strip.scrollWidth <= strip.clientWidth + 1) { return; }
+
+        var stripRect = strip.getBoundingClientRect();
+        var btnRect = btn.getBoundingClientRect();
+        var delta = (btnRect.left - stripRect.left) -
+                    (strip.clientWidth - btnRect.width) / 2;
+
+        strip.scrollTo({
+            left: strip.scrollLeft + delta,
+            behavior: prefersReducedMotion() ? 'auto' : 'smooth'
+        });
+    }
+
     function activate(name, pushState) {
         if (TABS.indexOf(name) === -1) {
             name = DEFAULT_TAB;
         }
 
+        var activeButton = null;
         buttons.forEach(function (btn) {
             var active = btn.getAttribute('data-tab') === name;
             btn.classList.toggle('active', active);
             btn.setAttribute('aria-selected', active ? 'true' : 'false');
+            if (active) { activeButton = btn; }
         });
+        revealTab(activeButton);
 
         TABS.forEach(function (tab) {
             if (panels[tab]) {
@@ -36,7 +65,7 @@
             }
         }
 
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
     }
 
     buttons.forEach(function (btn) {

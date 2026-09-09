@@ -52,6 +52,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Core Functions ---
 
+    /* Card backgrounds were always fetched at w=800, so a phone on cellular
+       downloaded the same heavy JPEG as a desktop. Ask Unsplash for a width
+       that matches the device and let it pick a modern format (WebP/AVIF).
+       Returns a well-formed URL even though the configured src already
+       carries a ?w= parameter. */
+    function cardImageUrl(src) {
+        const width = window.innerWidth < 640 ? 640 : 800;
+        const parts = src.split('?');
+        const params = new URLSearchParams(parts[1] || '');
+        params.set('w', String(width));
+        params.set('q', '70');
+        params.set('auto', 'format');
+        params.set('fit', 'crop');
+        return `${parts[0]}?${params.toString()}`;
+    }
+
+    /* The category nav is one sideways-scrolling row on phones, so the active
+       category (e.g. Certifications, the last link) starts off-screen. Slide
+       it into view within the nav only, without moving the page. */
+    function revealActiveNav(navContainer) {
+        const active = navContainer.querySelector('a.active');
+        if (!active || typeof navContainer.scrollTo !== 'function') return;
+        if (navContainer.scrollWidth <= navContainer.clientWidth + 1) return;
+
+        const navRect = navContainer.getBoundingClientRect();
+        const linkRect = active.getBoundingClientRect();
+        const delta = (linkRect.left - navRect.left) -
+                      (navContainer.clientWidth - linkRect.width) / 2;
+        const reduceMotion = window.matchMedia &&
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        navContainer.scrollTo({
+            left: navContainer.scrollLeft + delta,
+            behavior: reduceMotion ? 'auto' : 'smooth'
+        });
+    }
+
     async function fetchJson(path) {
         try {
             const response = await fetch(path);
@@ -75,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('');
 
         navContainer.innerHTML = homeLink + categoryLinks;
+        revealActiveNav(navContainer);
     }
 
     function renderPlaceholder(container, message) {
@@ -91,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         config.categories.forEach(cat => {
             const card = document.createElement('div');
             card.className = 'card card-with-image';
-            card.style.backgroundImage = `linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.82) 100%), url('${cat.image}')`;
+            card.style.backgroundImage = `linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.82) 100%), url('${cardImageUrl(cat.image)}')`;
 
             card.innerHTML = `
                 <div>
