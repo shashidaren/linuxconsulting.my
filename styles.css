@@ -14,7 +14,12 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    /* Stop mobile Safari/Chrome from inflating text in landscape. */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -25,7 +30,16 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    /* Long tokens (e-mail addresses, hostnames such as
+       ghostlab.linuxconsulting.my) must wrap instead of forcing the
+       page wider than the viewport. */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
+
+/* Media can never be wider than its container. */
+img, svg, video, iframe { max-width: 100%; }
+img { height: auto; }
 
 /* ---------- Header + tabs ---------- */
 .site-header {
@@ -36,7 +50,13 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    flex-wrap: wrap;
+    /* Single line above 600px. Flex line-breaking tests each item's
+       hypothetical (content) size, so with flex-wrap the tab strip jumped to
+       its own row whenever brand + tabs exceeded the width — min-width: 0 on
+       the strip is not enough to prevent that. nowrap keeps one row and lets
+       the strip shrink and scroll instead; the 600px query re-enables
+       wrapping to stack the strip full width on phones. */
+    flex-wrap: nowrap;
     padding: 0.7rem 1.5rem;
     background: var(--dark);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -48,6 +68,8 @@ body {
     gap: 0.6rem;
     text-decoration: none;
     color: #fff;
+    /* The tab strip absorbs any width shortage, never the brand. */
+    flex-shrink: 0;
 }
 
 .brand-mark {
@@ -71,11 +93,31 @@ body {
 
 .brand-name .dot { color: #34d399; }
 
+/* The tab strip is a single row that swipes sideways when it runs out of room,
+   rather than wrapping into a stack. Wrapping was what pushed the sticky
+   header to three rows on a 320px phone (~143px, 22% of a 640px-tall screen);
+   one scrolling row keeps it to two (~98px) and keeps every tab reachable.
+
+   min-width: 0 lets the strip shrink beside the brand (the header itself is
+   nowrap above 600px), so brand + tabs stay on one row at every width down to
+   600px; below that the strip takes the full width — see the media query. */
 .tabs {
     display: flex;
     gap: 0.25rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    min-width: 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+    /* `safe` keeps the tabs centred when they all fit, but falls back to
+       flex-start when they overflow — plain `center` would push the first tab
+       out of reach of the scrollbar. */
+    justify-content: safe center;
 }
+
+.tabs::-webkit-scrollbar { width: 0; height: 0; display: none; }
 
 .tab {
     appearance: none;
@@ -93,6 +135,17 @@ body {
     align-items: center;
     gap: 0.45rem;
     transition: background 0.2s, color 0.2s;
+    /* Never squeeze a tab: the strip scrolls instead. */
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+}
+
+/* The strip is a scroll container, so a normal outline drawn outside the pill
+   would be clipped. Draw the focus ring inset instead. */
+.tab:focus-visible {
+    outline: 2px solid #34d399;
+    outline-offset: -2px;
+    color: #fff;
 }
 
 .tab:hover { color: #e2e8f0; background: rgba(255, 255, 255, 0.06); }
@@ -234,7 +287,7 @@ main {
 /* ---------- Services grid ---------- */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 1.25rem;
 }
 
@@ -308,10 +361,6 @@ main {
 }
 
 /* ---------- Service cards with imagery ---------- */
-.services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
 .svc-card {
     display: flex;
     flex-direction: column;
@@ -405,7 +454,7 @@ main {
 /* ---------- Also in scope ---------- */
 .also-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 1rem;
 }
 
@@ -475,7 +524,7 @@ main {
 /* ---------- Engagement models ---------- */
 .engage-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
     gap: 1.25rem;
 }
 
@@ -517,7 +566,7 @@ main {
 /* ---------- Process ---------- */
 .process-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
     gap: 1.25rem;
     margin-top: 1.25rem;
 }
@@ -606,7 +655,7 @@ main {
 /* ---------- Portfolio: impact stats ---------- */
 .impact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
     gap: 1.25rem;
     margin-top: 1.5rem;
 }
@@ -704,7 +753,7 @@ main {
 /* ---------- Portfolio: skills ---------- */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
     gap: 1.25rem;
     margin-top: 1.5rem;
 }
@@ -743,7 +792,7 @@ main {
 /* ---------- Portfolio: certifications ---------- */
 .cert-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 1.25rem;
     margin-top: 1.5rem;
 }
@@ -768,7 +817,7 @@ main {
 /* ---------- Cards grid (projects) ---------- */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 1.5rem;
     margin-top: 1.25rem;
 }
@@ -858,7 +907,7 @@ main {
 /* ---------- Contact ---------- */
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 1.5rem;
 }
 
@@ -926,14 +975,148 @@ footer a:hover { color: #34d399; }
 
 .footer-links a:hover { color: #34d399; }
 
+/* ---------- 404 page ---------- */
+/* 404.html renders .logo-mark and .tagline, which were never defined, so the
+   page showed a bare unstyled icon. Give them the same treatment as the hero. */
+.logo-mark {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.25rem;
+    border-radius: 18px;
+    background: rgba(52, 211, 153, 0.15);
+    border: 1px solid rgba(52, 211, 153, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #34d399;
+}
+
+.tagline {
+    margin: 0.75rem auto 0;
+    color: #cbd5e1;
+    max-width: 460px;
+    font-size: 1.02rem;
+}
+
 /* ---------- Responsive ---------- */
+
+/* Touch-sized widths: grow the tabs to the 44px minimum tap target that
+   Apple's HIG and Material both recommend. Desktop keeps its 39px pills. */
+@media (max-width: 960px) {
+    .tab { min-height: 44px; }
+}
+
+/* Small phones: stack the brand above the tab strip and hand the strip the
+   full viewport width, so as many tabs as possible are visible at once.
+   Above 600px the brand and the strip share a single row (see .tabs). */
+@media (max-width: 600px) {
+    .site-header {
+        /* Re-enable wrapping so the strip can drop to its own full-width row. */
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 0.3rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    /* A 100% basis cannot fit beside the brand, so the header's flex-wrap
+       drops the strip onto its own full-width row. */
+    .tabs {
+        flex: 1 1 100%;
+        /* The strip always overflows at this width, so fade the right edge to
+           show that it swipes. Safe here because .tabs paints no background
+           of its own — it fades into the dark header. */
+        -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 22px), transparent 100%);
+        mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 22px), transparent 100%);
+    }
+}
+
 @media (max-width: 720px) {
-    .site-header { justify-content: center; }
-    .tabs { justify-content: center; }
     .hero { padding: 3.25rem 1rem 2.75rem; }
     .hero-stats { gap: 1.75rem; }
     .profile-head { flex-direction: column; align-items: center; text-align: center; }
     .profile-links { justify-content: center; }
     .scope-band { min-height: 200px; padding: 2.25rem 1rem; }
     .svc-body { padding-top: 2rem; }
+    .timeline-body { padding: 1.25rem 1.25rem; }
+    .cta-strip { padding: 2.25rem 1.25rem; }
+}
+
+/* Small phones (320-480px): tighten every fixed padding/size that was tuned
+   for desktop so content gets the width it needs. */
+@media (max-width: 480px) {
+    main { padding: 2rem 0.875rem 2.5rem; }
+
+    .section-title { font-size: 1.3rem; margin-top: 2rem; }
+    .section-sub { font-size: 0.93rem; margin-bottom: 1.4rem; }
+
+    .hero { padding: 2.5rem 0.875rem 2.25rem; }
+    .hero h1 { font-size: 1.75rem; }
+    .hero-sub { font-size: 0.98rem; margin-top: 1rem; }
+    .hero-kicker { font-size: 0.76rem; padding: 0.3rem 0.75rem; }
+
+    /* Stack the hero calls-to-action full width — much easier to hit one-handed. */
+    .hero-cta { flex-direction: column; align-items: stretch; gap: 0.6rem; margin-top: 1.5rem; }
+    .hero-cta .btn { justify-content: center; width: 100%; }
+
+    /* Keep the three stats on one row instead of wrapping to 2 + 1. */
+    .hero-stats { gap: 0.6rem; margin-top: 2.25rem; }
+    .stat { flex: 1 1 0; min-width: 0; }
+    .stat-num { font-size: 1.3rem; }
+    .stat-label { font-size: 0.74rem; line-height: 1.35; }
+
+    .scope-band { padding: 2rem 1rem; min-height: 180px; border-radius: 14px; }
+    .scope-band-sub { font-size: 0.9rem; }
+
+    /* Cards: shave the padding so text gets usable line lengths. */
+    .svc-card, .card, .contact-card, .engage-card, .step,
+    .skill-group, .cert-card, .impact, .timeline-body { border-radius: 12px; }
+    .svc-body { padding: 2rem 1.05rem 1.25rem; }
+    .card, .contact-card, .engage-card, .step { padding: 1.2rem 1.1rem; }
+    .skill-group, .cert-card { padding: 1.1rem; }
+    .impact { padding: 1.2rem 0.9rem; }
+
+    /* "Also in scope" rows: the 84px thumbnail left only ~150px for text. */
+    .also-item { padding: 1rem; gap: 0.85rem; }
+    .also-icon, .also-media { width: 64px; height: 64px; font-size: 1.25rem; border-radius: 10px; }
+    .also-item h3 { font-size: 0.95rem; }
+    .also-item p { font-size: 0.86rem; }
+
+    .profile-head { padding: 1.4rem 1.1rem; gap: 1rem; }
+    .avatar { width: 72px; height: 72px; font-size: 1.9rem; }
+    .profile-name { font-size: 1.4rem; }
+    .profile-summary { font-size: 0.92rem; }
+    .btn-small { min-height: 44px; max-width: 100%; justify-content: center; }
+    .profile-links { gap: 0.5rem; }
+
+    /* Keep the dot's negative offset equal to the container's padding-left so
+       it still lands exactly on the 7px vertical rule. */
+    .timeline { padding-left: 1.4rem; }
+    .timeline-dot { left: -1.4rem; }
+    .timeline-body { padding: 1.1rem 1.05rem; }
+    .timeline-body ul { padding-left: 1.05rem; font-size: 0.9rem; }
+
+    .cert-card { gap: 0.8rem; }
+    .cert-icon { font-size: 1.4rem; }
+
+    .lab-strip .chip { padding: 0.6rem 0.9rem; font-size: 0.85rem; }
+
+    .cta-strip { padding: 2rem 1.1rem; border-radius: 14px; margin-top: 2.25rem; }
+    .cta-strip h2 { font-size: 1.3rem; }
+    .cta-strip p { font-size: 0.94rem; }
+    .cta-strip .btn { width: 100%; justify-content: center; }
+
+    footer { padding: 1.5rem 0.875rem; font-size: 0.88rem; }
+    /* Give the footer's inline links a real tap area. */
+    footer a { display: inline-block; padding: 0.4rem 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
