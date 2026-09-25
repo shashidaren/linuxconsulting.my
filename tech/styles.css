@@ -14,13 +14,25 @@
 
 * { box-sizing: border-box; }
 
+html {
+    /* Stop mobile browsers from inflating text in landscape. */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     background-color: var(--bg);
     color: var(--text);
+    /* Long headlines and URLs from the RSS feeds must wrap, not widen the page. */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
+
+img, svg, video, iframe { max-width: 100%; }
+img { height: auto; }
 
 /* ---------- Top strip ---------- */
 .top-strip {
@@ -50,7 +62,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 1.9rem;
+    font-size: clamp(1.4rem, 6vw, 1.9rem);
     letter-spacing: -0.02em;
 }
 
@@ -62,10 +74,18 @@ header p {
 }
 
 /* ---------- Navigation ---------- */
+/* One sideways-scrolling row at every width. With flex-wrap the six category
+   links stacked into four rows on a 320px phone — about 208px of sticky nav,
+   a third of the screen, permanently pinned over the news. */
 nav {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: safe center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
     background: var(--surface);
     padding: 0.5rem;
     position: sticky;
@@ -73,6 +93,8 @@ nav {
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
 }
+
+nav::-webkit-scrollbar { width: 0; height: 0; display: none; }
 
 nav a {
     color: var(--text);
@@ -82,6 +104,23 @@ nav a {
     border-radius: 8px;
     margin: 0.2rem;
     font-weight: 500;
+    /* As plain inline boxes the pill background overflowed the line box and
+       the nav's own padding, so pills bled over the sticky bar's edge.
+       inline-flex gives each pill a real 44px-tall box and centres icon+label.
+       `gap` is required because flex layout drops the whitespace text node
+       that used to sit between the <i> icon and the label. */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+}
+
+/* The nav is a scroll container, so an outline drawn outside the pill would be
+   clipped. Draw the focus ring inset instead. */
+nav a:focus-visible {
+    outline: 2px solid var(--accent-strong);
+    outline-offset: -2px;
 }
 
 nav a:hover {
@@ -104,28 +143,35 @@ nav a.active {
     padding: 3.25rem 1rem;
 }
 
+/* Slides are stacked into a single grid cell instead of being absolutely
+   positioned. Absolutely positioned children never contribute to their
+   parent's height, so the old min-height:130px + overflow:hidden box silently
+   CLIPPED any slide that wrapped taller than 130px — which is every slide on a
+   phone (the AI slide measured ~172px). With grid stacking the container is
+   always exactly as tall as the tallest slide, at any viewport width. */
 .hero-slider {
     position: relative;
+    display: grid;
     min-height: 130px;
-    overflow: hidden;
 }
 
 .slide {
-    position: absolute;
-    width: 100%;
+    grid-area: 1 / 1;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(8px);
-    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, visibility 0.8s;
 }
 
 .slide.active {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
 }
 
 .slide h2 {
     margin: 0 0 0.5rem;
-    font-size: 1.7rem;
+    font-size: clamp(1.25rem, 5.5vw, 1.7rem);
     letter-spacing: -0.02em;
 }
 
@@ -161,7 +207,7 @@ main {
 
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 1.5rem;
 }
 
@@ -303,4 +349,55 @@ footer a {
 footer a:hover {
     text-decoration-color: var(--accent);
     color: var(--accent);
+}
+
+/* ---------- Responsive ---------- */
+
+/* Small phones: tighten the paddings that were tuned for desktop. */
+@media (max-width: 480px) {
+    .top-strip { padding: 0.45rem 0.75rem; font-size: 0.82rem; }
+
+    header { padding: 1.35rem 0.875rem; }
+    header p { font-size: 0.93rem; }
+
+    nav { padding: 0.35rem 0.5rem; }
+    /* Tighter padding, but never below the 44px minimum tap target. */
+    nav a { padding: 0.55rem 0.8rem; font-size: 0.94rem; min-height: 44px; }
+
+    .hero { padding: 2.25rem 0.875rem; }
+    .slide h2 { line-height: 1.3; }
+    .slide p { font-size: 0.95rem; }
+
+    /* Full-width call to action — an easy one-handed tap target. */
+    .cta-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 48px;
+    }
+
+    main { padding: 1.25rem 0.875rem 1.75rem; }
+    .cards-grid { gap: 1rem; }
+    .card { padding: 1.25rem 1.1rem; }
+    .card-with-image { min-height: 240px; }
+    .card-with-image h2 { font-size: 1.2rem; }
+
+    .news-list-container { padding: 1.25rem 1.05rem; }
+    .news-list-container h1 { font-size: 1.35rem; }
+    .news-item { padding: 0.85rem 0; }
+    .news-item h3 { font-size: 0.98rem; line-height: 1.45; }
+    .placeholder { padding: 1.5rem 0.5rem; }
+
+    footer { padding: 1.5rem 0.875rem; font-size: 0.88rem; }
+    /* Give the footer's inline links a real tap area. */
+    footer a { display: inline-block; padding: 0.4rem 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
